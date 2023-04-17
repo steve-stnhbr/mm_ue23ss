@@ -18,10 +18,11 @@ public class MouseTracker : MonoBehaviour
     {
         
         Vector3 position = Input.mousePosition;
+        // offset, to make the tracker visible
         position.z = 3;
         Vector3 screenWorldPos = Camera.main.ScreenToWorldPoint(position);
 
-
+        // check for nearest collider in line behind mouse position and jump to it
         RaycastHit raycastHit;
         Ray ray = new Ray(screenWorldPos, screenWorldPos-Camera.main.ScreenToWorldPoint(new Vector3(0,0,0)));
         Debug.DrawRay(ray.origin, ray.direction, Color.red, 0.1f);

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -149,7 +149,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761132168}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: efe2901d428584f70b9e7d35d806ee84, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -413,6 +413,7 @@ GameObject:
   - component: {fileID: 1721928118}
   - component: {fileID: 1721928123}
   - component: {fileID: 1721928122}
+  - component: {fileID: 1721928124}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -530,3 +531,16 @@ MonoBehaviour:
   MovementSpeed: 1
   MaxMovementSpeed: 5
   JumpHeight: 5
+--- !u!135 &1721928124
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721928117}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: -0.55, z: 0}

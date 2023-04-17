@@ -8,7 +8,9 @@ public class PlayerMovement : MonoBehaviour
     public float MovementSpeed = 0.3f;
     public float MaxMovementSpeed = 5;
     public float JumpHeight = 3;
-    
+
+    public LayerMask jumpRaycastMask;
+    public float jumpDistanceToFloor;
 
 
     // Start is called before the first frame update
@@ -45,9 +47,14 @@ public class PlayerMovement : MonoBehaviour
 
     void handleJump()
     {
+        if (!isOnGround()) return;
         Vector3 forceVector = new Vector3(0, Mathf.Max(Input.GetAxis("HumanJump") * JumpHeight,0), 0);
         rigidbody.AddForce(forceVector, ForceMode.Impulse);
     }
 
-    
+    bool isOnGround()
+    {
+        return Physics.Raycast(rigidbody.transform.position, Vector3.down, 1f + jumpDistanceToFloor, jumpRaycastMask);
+    }
+
 }

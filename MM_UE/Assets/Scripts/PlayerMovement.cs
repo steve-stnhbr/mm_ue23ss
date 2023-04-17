@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask jumpRaycastMask;
     public float jumpDistanceToFloor;
 
+    bool isJumping;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,18 +39,16 @@ public class PlayerMovement : MonoBehaviour
         rigidbody.AddForce(forceVector, ForceMode.VelocityChange);
         Vector2 clampedXZ = Vector2.ClampMagnitude(new Vector2(rigidbody.velocity.x, rigidbody.velocity.z), MaxMovementSpeed);
         rigidbody.velocity = new Vector3(clampedXZ.x, rigidbody.velocity.y, clampedXZ.y);
-
-        /*Vector3 currentPosition = rigidbody.transform.position;
-            rigidbody.transform.position = new Vector3(currentPosition.x + Input.GetAxis("HumanHorizontal")*MOVEMENT_SPEED, 
-            currentPosition.y, 
-            currentPosition.z + Input.GetAxis("HumanVertical") * MOVEMENT_SPEED);*/
         
     }
 
     void handleJump()
     {
-        if (!isOnGround()) return;
-        Vector3 forceVector = new Vector3(0, Mathf.Max(Input.GetAxis("HumanJump") * JumpHeight,0), 0);
+        float jumpMultiplier = Input.GetAxis("HumanJump");
+        if (jumpMultiplier <= 0 || !isOnGround()) return;
+        isJumping = true;
+        Debug.Log("Applying jump force");
+        Vector3 forceVector = new Vector3(0, Mathf.Max(jumpMultiplier * JumpHeight,0), 0);
         rigidbody.AddForce(forceVector, ForceMode.Impulse);
     }
 

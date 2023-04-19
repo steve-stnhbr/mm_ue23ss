@@ -495,7 +495,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 60.298, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 14.101, y: 0, z: 0} 
 --- !u!1 &1721928117
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,8 +508,8 @@ GameObject:
   - component: {fileID: 1721928120}
   - component: {fileID: 1721928119}
   - component: {fileID: 1721928118}
+  - component: {fileID: 1721928124}
   - component: {fileID: 1721928123}
-  - component: {fileID: 1721928122}
   m_Layer: 6
   m_Name: Capsule
   m_TagString: Untagged
@@ -525,7 +525,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1721928117}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -596,7 +596,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1721928122
+--- !u!54 &1721928123
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

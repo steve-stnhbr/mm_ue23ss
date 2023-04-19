@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 1032066296}
   - component: {fileID: 1032066295}
   - component: {fileID: 1032066294}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +412,7 @@ GameObject:
   - component: {fileID: 1112196474}
   - component: {fileID: 1112196477}
   - component: {fileID: 1112196478}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wizard Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,8 +499,8 @@ MonoBehaviour:
   maxDistance: 30
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
-  cameraOffset: 0
+    m_Bits: 776
+  cameraOffset: 3
   followStrength: 0
 --- !u!135 &1112196478
 SphereCollider:
@@ -663,7 +663,7 @@ GameObject:
   - component: {fileID: 1215142629}
   - component: {fileID: 1215142628}
   - component: {fileID: 1215142627}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -761,7 +761,7 @@ GameObject:
   - component: {fileID: 1624365103}
   - component: {fileID: 1624365102}
   - component: {fileID: 1624365101}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

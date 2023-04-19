@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class HumanInteraction : MonoBehaviour
 {
-    public Collision trigger;
+    public float interactDelay = 0.2f;
+    float lastInteractTime = 0;
 
-    private void FixedUpdate()
+    private void OnTriggerStay(Collider other)
     {
-        if (Input.GetAxis("HumanInteract") > 0.5f)
+        if (Time.time-lastInteractTime>interactDelay && Input.GetAxis("HumanInteract") > 0.5f)
         {
-            
+            lastInteractTime = Time.time;
+            IHumanInteractable otherScript = other.GetComponent<IHumanInteractable>();
+            if (otherScript != null)
+            {
+                otherScript.HumanInteract();
+            }
         }
+        
     }
+    
 }

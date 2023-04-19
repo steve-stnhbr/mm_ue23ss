@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RedButton : MonoBehaviour, IHumanInteractable, IWizardInteractable
 {
-    public bool active = false;
+    public bool state = false;
     public Collider trigger;
     public Material materialWhenActive;
     Material materialWhenInactive;
@@ -29,12 +29,8 @@ public class RedButton : MonoBehaviour, IHumanInteractable, IWizardInteractable
 
     void Activate()
     {
-        active = true;
-    }
-
-    void Update()
-    {
-        if (active)
+        state = !state;
+        if (state)
         {
             parentMeshRenderer.material = materialWhenActive;
         }
@@ -42,8 +38,8 @@ public class RedButton : MonoBehaviour, IHumanInteractable, IWizardInteractable
         {
             parentMeshRenderer.material = materialWhenInactive;
         }
-        active = false;
     }
+
 
 
 }

@@ -12,10 +12,10 @@ public class HumanInteraction : MonoBehaviour
         if (Time.time-lastInteractTime>interactDelay && Input.GetAxis("HumanInteract") > 0.5f)
         {
             lastInteractTime = Time.time;
-            IHumanInteractable otherScript = other.GetComponent<IHumanInteractable>();
+            IInteractable otherScript = other.GetComponent<IInteractable>();
             if (otherScript != null)
             {
-                otherScript.HumanInteract();
+                otherScript.Interact(EnumActor.Human);
             }
         }
         

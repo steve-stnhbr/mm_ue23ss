@@ -8,12 +8,16 @@ public class WizardPlayerMovement: MonoBehaviour
     public LayerMask layerMask;
     public float cameraOffset;
     // This value determines how strongly the wizard player is attached to the mouse movement
-    public float followStrength;
+    public float maxSpeed;
+    public float mouseGravitation;
+
+    Rigidbody rigidbody;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -31,16 +35,30 @@ public class WizardPlayerMovement: MonoBehaviour
         {
             moveTo(raycastHit.point);
         }
+        /*
         else
         {
             transform.position = screenWorldPos;
+        }
+        */
+    }
+
+    void FixedUpdate()
+    {
+        if (rigidbody.velocity.magnitude > maxSpeed)
+        {
+            rigidbody.velocity = rigidbody.velocity.normalized * maxSpeed;
         }
     }
 
     void moveTo(Vector3 position)
     {
-        Vector3 diff = (position - transform.position);
-        Vector3 newPos = transform.position + diff.normalized * diff.magnitude * followStrength;
-        transform.position = position;
+        float distance = Vector3.Distance(position, transform.position);
+        if (distance < .1)
+        {
+            return;
+        }
+        Vector3 force = (position - transform.position) * (mouseGravitation * (rigidbody.mass / distance * distance));
+        rigidbody.AddForce(force, ForceMode.Acceleration);
     }
 }

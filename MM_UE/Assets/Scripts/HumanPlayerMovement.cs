@@ -10,7 +10,7 @@ public class HumanPlayerMovement : MonoBehaviour
     public float JumpHeight = 3;
 
     // A LayerMask that contains all Layers to considered for the OnGroundCheck
-    public LayerMask jumpRaycastMask;
+    public LayerMask jumpLayerMask;
     // The distance the player has to have to the ground to be able to perform a Jump
     public float jumpDistanceToFloor;
     // The Amount of time a Player is not able to jump after a jump was performed in seconds
@@ -60,7 +60,7 @@ public class HumanPlayerMovement : MonoBehaviour
     bool isGroundCollision(Collision collision)
     {
         return collision.gameObject
-            && collision.gameObject.layer == LayerMask.NameToLayer("ground");
+            && jumpLayerMask == (jumpLayerMask | (1 << collision.gameObject.layer));
     }
 
     void handleMovement()

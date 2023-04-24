@@ -11,6 +11,7 @@ public class TestSwitch : Switch
 
     protected override void DoWhileOffFixed()
     {
+
     }
 
     protected override void DoWhileOnFixed()

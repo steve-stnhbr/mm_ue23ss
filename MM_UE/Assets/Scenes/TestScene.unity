@@ -504,6 +504,7 @@ MonoBehaviour:
   cameraOffset: 3
   maxSpeed: 10.14
   mouseGravitation: 1
+  maxDistanceToMouse: 0.2
 --- !u!135 &1112196478
 SphereCollider:
   m_ObjectHideFlags: 0

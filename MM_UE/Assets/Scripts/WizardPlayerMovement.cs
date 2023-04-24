@@ -7,9 +7,12 @@ public class WizardPlayerMovement: MonoBehaviour
     public float maxDistance = 30;
     public LayerMask layerMask;
     public float cameraOffset;
-    // This value determines how strongly the wizard player is attached to the mouse movement
+    // This value describes the maximum speed the wizard player can have while moving to the mouse
     public float maxSpeed;
+    // This value determines how strongly the wizard player is attached to the mouse movement
     public float mouseGravitation;
+    // This value describes how far away from the mouse no more force is exerted on the wizard player 
+    public float maxDistanceToMouse;
 
     Rigidbody rigidbody;
 
@@ -54,7 +57,7 @@ public class WizardPlayerMovement: MonoBehaviour
     void moveTo(Vector3 position)
     {
         float distance = Vector3.Distance(position, transform.position);
-        if (distance < .1)
+        if (distance < maxDistanceToMouse)
         {
             return;
         }

@@ -31,5 +31,9 @@ public class WizardSkillBehaviour : MonoBehaviour
         }
 
         selectedSkill = (selectedSkill + (int)Input.mouseScrollDelta.y) % availableWizardSkillInstances.Length;
+        if (selectedSkill < 0)
+        {
+            selectedSkill = availableWizardSkillInstances.Length + 1 - selectedSkill;
+        }
     }
 }

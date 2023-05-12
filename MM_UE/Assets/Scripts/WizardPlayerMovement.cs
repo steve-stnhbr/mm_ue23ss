@@ -16,7 +16,6 @@ public class WizardPlayerMovement: MonoBehaviour
 
     Rigidbody rigidbody;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -29,21 +28,15 @@ public class WizardPlayerMovement: MonoBehaviour
         Vector3 position = Input.mousePosition;
         // offset, to make the tracker visible
         position.z = cameraOffset;
-        Vector3 screenWorldPos = Camera.main.ScreenToWorldPoint(position);
+        Vector3 levelPos = Camera.main.ScreenToWorldPoint(position);
 
         // check for nearest collider in line behind mouse position and jump to it
         RaycastHit raycastHit;
-        Ray ray = new Ray(screenWorldPos, screenWorldPos-Camera.main.ScreenToWorldPoint(new Vector3(0,0,0)));
+        Ray ray = new Ray(levelPos, levelPos - Camera.main.ScreenToWorldPoint(new Vector3(0,0,0)));
         if(Physics.Raycast(ray, out raycastHit, maxDistance, layerMask))
         {
-            moveTo(raycastHit.point);
+            moveTo(Level.getCurrentLevel().worldPositionToLevelPosition(raycastHit.point));
         }
-        /*
-        else
-        {
-            transform.position = screenWorldPos;
-        }
-        */
     }
 
     void FixedUpdate()

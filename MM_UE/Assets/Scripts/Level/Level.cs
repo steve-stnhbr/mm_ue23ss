@@ -7,9 +7,10 @@ using UnityEngine.SceneManagement;
 public abstract class Level : MonoBehaviour
 {
     const int MAX_LEVEL_SIZE = 500;
-    const int VOXEL_SIZE = 25;
+    const int MAX_VOXEL_SIZE = 25;
 
     public bool showErrors;
+    public bool showBounds;
 
     [Header("Level Size")]
     [Range(0, MAX_LEVEL_SIZE)]
@@ -21,6 +22,10 @@ public abstract class Level : MonoBehaviour
     [Range(0, MAX_LEVEL_SIZE)]
     [Tooltip("The amount of voxels in Z direction")]
     public int levelDepth;
+
+    [Range(0,MAX_VOXEL_SIZE)]
+    [Tooltip("The size of a voxel")]
+    public int voxelSize;
 
     [Tooltip("The layers that are checked on their voxel position")]
     public LayerMask checkedLayers;
@@ -44,8 +49,10 @@ public abstract class Level : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        if (showBounds) 
+            UnityEditor.Handles.DrawWireCube(transform.position + (new Vector3(levelWidth, levelHeight, levelDepth) * (voxelSize * .5f)) - Vector3.one * voxelSize / 2f, new Vector3(levelWidth, levelHeight, levelDepth) * voxelSize);
+
         if (!showErrors) return;
-        UnityEditor.Handles.DrawWireCube(transform.position + (new Vector3(levelWidth, levelHeight, levelDepth) * (VOXEL_SIZE / 2)), new Vector3(levelWidth, levelHeight, levelDepth) * VOXEL_SIZE);
         GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
 
         foreach (GameObject go in allObjects)
@@ -65,28 +72,28 @@ public abstract class Level : MonoBehaviour
 
     private bool gameObjectIsValid(GameObject go)
     {
-        return go.transform.position.x % VOXEL_SIZE == 0
-                && go.transform.position.y % VOXEL_SIZE == 0
-                && go.transform.position.z % VOXEL_SIZE == 0
-                && go.transform.localScale.x == VOXEL_SIZE
-                && go.transform.localScale.y == VOXEL_SIZE
-                && go.transform.localScale.z == VOXEL_SIZE;
+        return go.transform.position.x % voxelSize == 0
+                && go.transform.position.y % voxelSize == 0
+                && go.transform.position.z % voxelSize == 0
+                && go.transform.localScale.x == voxelSize
+                && go.transform.localScale.y == voxelSize
+                && go.transform.localScale.z == voxelSize;
         /*
                 && go.transform.position.x >= 0
-                && go.transform.position.x < levelSize.x * VOXEL_SIZE
+                && go.transform.position.x < levelSize.x * voxelSize
                 && go.transform.position.y >= 0
-                && go.transform.position.y < levelSize.y * VOXEL_SIZE
+                && go.transform.position.y < levelSize.y * voxelSize
                 && go.transform.position.z >= 0
-                && go.transform.position.z < levelSize.z * VOXEL_SIZE;
+                && go.transform.position.z < levelSize.z * voxelSize;
         */
     }
 
     public Vector3 worldPositionToLevelPosition(Vector3 worldPos)
     {
         Vector3 levelPos = new Vector3();
-        levelPos.x = (float) Math.Round(worldPos.x * VOXEL_SIZE, MidpointRounding.AwayFromZero) / VOXEL_SIZE;
-        levelPos.y = (float)Math.Round(worldPos.y * VOXEL_SIZE, MidpointRounding.AwayFromZero) / VOXEL_SIZE;
-        levelPos.z = (float)Math.Round(worldPos.z * VOXEL_SIZE, MidpointRounding.AwayFromZero) / VOXEL_SIZE;
+        levelPos.x = (float) Math.Round(worldPos.x * voxelSize, MidpointRounding.AwayFromZero) / voxelSize;
+        levelPos.y = (float)Math.Round(worldPos.y * voxelSize, MidpointRounding.AwayFromZero) / voxelSize;
+        levelPos.z = (float)Math.Round(worldPos.z * voxelSize, MidpointRounding.AwayFromZero) / voxelSize;
         return levelPos;
     }
 

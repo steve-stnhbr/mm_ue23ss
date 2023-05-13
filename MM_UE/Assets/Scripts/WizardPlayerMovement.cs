@@ -7,11 +7,11 @@ public class WizardPlayerMovement: MonoBehaviour
     public float maxDistance = 30;
     public LayerMask layerMask;
     public float cameraOffset;
-    // This value describes the maximum speed the wizard player can have while moving to the mouse
+    [Tooltip("This value describes the maximum speed the wizard player can have while moving to the mouse")]
     public float maxSpeed;
-    // This value determines how strongly the wizard player is attached to the mouse movement
+    [Tooltip("This value determines how strongly the wizard player is attached to the mouse movement")]
     public float mouseGravitation;
-    // This value describes how far away from the mouse no more force is exerted on the wizard player 
+    [Tooltip("This value describes how far away from the mouse no more force is exerted on the wizard player")]
     public float maxDistanceToMouse;
 
     Rigidbody rigidbody;
@@ -30,10 +30,10 @@ public class WizardPlayerMovement: MonoBehaviour
         position.z = cameraOffset;
         Vector3 levelPos = Camera.main.ScreenToWorldPoint(position);
 
-        // check for nearest collider in line behind mouse position and jump to it
+        // check for nearest collider in line behind mouse position and move towards it
         RaycastHit raycastHit;
         Ray ray = new Ray(levelPos, levelPos - Camera.main.ScreenToWorldPoint(new Vector3(0,0,0)));
-        if(Physics.Raycast(ray, out raycastHit, maxDistance, layerMask))
+        if (Physics.Raycast(ray, out raycastHit, maxDistance, layerMask))
         {
             moveTo(Level.getCurrentLevel().worldPositionToLevelPosition(raycastHit.point));
         }
@@ -54,7 +54,9 @@ public class WizardPlayerMovement: MonoBehaviour
         {
             return;
         }
+
         Vector3 force = (position - transform.position) * (mouseGravitation * (rigidbody.mass / distance * distance));
-        rigidbody.AddForce(force, ForceMode.Acceleration);
+        Vector3 xz = new Vector3(force.x, 0, force.z);
+        rigidbody.AddForce(xz, ForceMode.Acceleration);
     }
 }

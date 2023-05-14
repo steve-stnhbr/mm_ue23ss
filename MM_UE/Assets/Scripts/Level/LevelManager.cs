@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class LevelManager : MonoBehaviour
+public static class LevelManager
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static string[] levelNames = new string[] {
+        "Level1"
+    };
 
-    // Update is called once per frame
-    void Update()
+    public static int currentIndex = 0;
+
+    public static int loadNextLevel()
     {
-        
+        SceneManager.LoadScene(levelNames[++currentIndex]);
+        return currentIndex;
     }
 }

@@ -55,8 +55,9 @@ public abstract class Level : MonoBehaviour
         if (!showErrors) return;
         GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>();
 
-        foreach (GameObject go in allObjects)
+        foreach (Transform tf in GetComponentInChildren<Transform>())
         {
+            GameObject go = tf.gameObject;
             if (checkedLayers != (checkedLayers | (1 << go.layer)))
             {
                 continue;

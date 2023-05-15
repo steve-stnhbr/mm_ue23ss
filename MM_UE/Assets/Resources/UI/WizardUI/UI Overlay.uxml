@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="WizardElement" src="project://database/Assets/Resources/Prefabs/UI/WizardElement.uxml?fileID=9197481963319205126&amp;guid=ff3ba7ac2008ff6498d42b887f3a582f&amp;type=3#WizardElement" />
+    <ui:GroupBox>
+        <ui:Instance template="WizardElement" name="WizardElement" class="template" />
+    </ui:GroupBox>
+</ui:UXML>

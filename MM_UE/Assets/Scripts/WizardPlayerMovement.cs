@@ -35,7 +35,7 @@ public class WizardPlayerMovement: MonoBehaviour
         Ray ray = new Ray(levelPos, levelPos - Camera.main.ScreenToWorldPoint(new Vector3(0,0,0)));
         if (Physics.Raycast(ray, out raycastHit, maxDistance, layerMask))
         {
-            moveTo(Level.getCurrentLevel().worldPositionToLevelPosition(raycastHit.point));
+            moveTo(LevelManager.getCurrentLevel().worldPositionToLevelPosition(raycastHit.point));
         }
     }
 

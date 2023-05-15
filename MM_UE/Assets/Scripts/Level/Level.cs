@@ -98,14 +98,8 @@ public abstract class Level : MonoBehaviour
         return levelPos;
     }
 
-    public static Level getCurrentLevel()
+    public WizardSkillBehaviour GetWizardSkillBehaviour()
     {
-        foreach (GameObject go in SceneManager.GetActiveScene().GetRootGameObjects())
-        {
-            Level l = go.GetComponent<Level>();
-            if (l != null)
-                return l;
-        }
-        return null;
+        return transform.parent.GetComponentInChildren<WizardSkillBehaviour>();
     }
 }

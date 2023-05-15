@@ -36,4 +36,14 @@ public class WizardSkillBehaviour : MonoBehaviour
             selectedSkill = availableWizardSkillInstances.Length + 1 - selectedSkill;
         }
     }
+
+    public void setSelectedSkill(int index)
+    {
+        selectedSkill = index;
+    }
+
+    public WizardSkill[] GetWizardSkills()
+    {
+        return availableWizardSkillInstances;
+    }
 }

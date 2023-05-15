@@ -35,6 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1776457119070137800}
+  - {fileID: 6823562156266121710}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -133,19 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 417efbc02f14def4583c443ba20c68a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  availableWizardSkills:
-  - GuidAssignmentFailed: 0
-    GUID: ae43fa5b1c993b441a74a481e2b65953
-    _typeNameAndAssembly: WS_CreateBox, Assembly-CSharp
-    _suppressLogs: 0
-  - GuidAssignmentFailed: 0
-    GUID: 5abe13c3ce0bcf34797f3b1a2f08365a
-    _typeNameAndAssembly: WS_CreateSphere, Assembly-CSharp
-    _suppressLogs: 0
-  - GuidAssignmentFailed: 0
-    GUID: 4e17b81d7dcc758429fce62fedaad532
-    _typeNameAndAssembly: WS_CreateCylinder, Assembly-CSharp
-    _suppressLogs: 0
+  skillTemplate: {fileID: 0}
 --- !u!54 &1776457117238904678
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4992,3 +4981,51 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &2047236211658394773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6823562156266121710}
+  - component: {fileID: 1064316457769357508}
+  m_Layer: 7
+  m_Name: WizardUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6823562156266121710
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047236211658394773}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1776457117238904730}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1064316457769357508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047236211658394773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 8171a4afd85ddeb4e940e478e4f6ec14, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 515d7a77a77e6f746b13cd38cb2914db, type: 3}
+  m_SortingOrder: 0

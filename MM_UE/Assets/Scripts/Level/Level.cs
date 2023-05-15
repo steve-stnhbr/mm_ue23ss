@@ -100,6 +100,6 @@ public abstract class Level : MonoBehaviour
 
     public WizardSkillBehaviour GetWizardSkillBehaviour()
     {
-        return transform.parent.GetComponentInChildren<WizardSkillBehaviour>();
+        return UnityEngine.Object.FindObjectsOfType<WizardSkillBehaviour>()[0];
     }
 }

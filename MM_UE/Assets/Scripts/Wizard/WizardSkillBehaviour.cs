@@ -2,24 +2,25 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 using TypeReferences;
+using System.Collections.Generic;
+using UnityEngine.UIElements;
 
 public class WizardSkillBehaviour : MonoBehaviour
 {
-    string[] skills = Assembly.GetAssembly(typeof(WizardSkill)).GetTypes()
-        .Where(myType => myType.IsClass && !myType.IsAbstract && !myType.IsGenericType && myType.IsSubclassOf(typeof(WizardSkill)))
-        .Select(type => type.ToString()).ToArray();
-    [Inherits(typeof(WizardSkill))]
-    public TypeReference[] availableWizardSkills;
+    private VisualElement root;
+    public VisualTreeAsset skillTemplate;
 
     int selectedSkill;
+
     WizardSkill[] availableWizardSkillInstances;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        // Transforming all selected Skills at runtime to an array of instances improves performance and memory usage
-        availableWizardSkillInstances =
-            availableWizardSkills.Select(skillType => Assembly.GetAssembly(typeof(WizardSkillBehaviour)).CreateInstance(skillType.Type.Name) as WizardSkill).ToArray();
+        availableWizardSkillInstances = GetComponents<WizardSkill>();
+        root = GetComponentInChildren<UIDocument>().rootVisualElement;
+        BuildSkillElements();
     }
 
     // Update is called once per frame
@@ -45,5 +46,18 @@ public class WizardSkillBehaviour : MonoBehaviour
     public WizardSkill[] GetWizardSkills()
     {
         return availableWizardSkillInstances;
+    }
+
+    private void BuildSkillElements()
+    {
+        foreach (WizardSkill skill in availableWizardSkillInstances)
+        {
+            TemplateContainer template = skillTemplate.Instantiate();
+            Label label = template.Q<Label>();
+            label.text = skill.GetType().ToString();
+            label.style.color = skill.UIColor;
+            
+            root.Add(template);
+        }
     }
 }

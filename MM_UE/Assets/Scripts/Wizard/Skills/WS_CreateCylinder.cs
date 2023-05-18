@@ -6,6 +6,10 @@ public class WS_CreateCylinder : WizardSkill
 {
     public GameObject prefab;
 
+    public override string skillName
+    {
+        get { return "Create Box"; }
+    }
     public override void OnExecute(GameObject wizard)
     {
         GameObject instance = GameObject.Instantiate(prefab);

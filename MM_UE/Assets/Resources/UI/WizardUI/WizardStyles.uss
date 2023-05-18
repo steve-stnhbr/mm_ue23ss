@@ -1,4 +1,10 @@
+* {
+	--selected-color: red;
+}
 .selected {
-	border-width: 10px;
-	border-color: red;
+	border-color: var(--selected-color);
+}
+
+.element {
+	border-width: 5px;
 }

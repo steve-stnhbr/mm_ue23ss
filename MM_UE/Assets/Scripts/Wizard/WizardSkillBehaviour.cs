@@ -4,6 +4,7 @@ using UnityEngine;
 using TypeReferences;
 using System.Collections.Generic;
 using UnityEngine.UIElements;
+using UnityEditor;
 
 public class WizardSkillBehaviour : MonoBehaviour
 {
@@ -55,6 +56,12 @@ public class WizardSkillBehaviour : MonoBehaviour
         UnmarkSelected(skillContainers[selectedSkill]);
         selectedSkill = index;
         MarkSelected(skillContainers[selectedSkill]);
+        ColorParticleSystem(availableWizardSkillInstances[selectedSkill].UIColor);
+    }
+
+    private void ColorParticleSystem(Color color)
+    {
+        GetComponentInChildren<ParticleSystemRenderer>().material.color = color;
     }
 
     public WizardSkill[] GetWizardSkills()
@@ -70,11 +77,19 @@ public class WizardSkillBehaviour : MonoBehaviour
             WizardSkill skill = availableWizardSkillInstances[i];
             TemplateContainer template = skillTemplate.Instantiate();
             Label label = template.Q<Label>();
-            label.text = skill.GetType().ToString();
-            label.style.color = skill.UIColor;
+            label.text = skill.skillName;
+
+            Image content = template.Q<Image>("content");
+            content.image = skill.UISprite.texture;
+
+            
+            Image outline = template.Q<Image>("outline");
+            outline.image = AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/Resources/UI/Sprites/outline.png");
+
+            template.AddToClassList("element");
 
             skillContainers[i] = template;
-            root.Add(template);
+            root.Q<GroupBox>().Add(template);
         }
     }
 

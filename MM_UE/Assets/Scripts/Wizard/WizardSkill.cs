@@ -8,5 +8,7 @@ public abstract class WizardSkill : MonoBehaviour
     public Sprite UISprite;
     public Color UIColor;
 
+    public abstract string skillName { get; }
+
     public abstract void OnExecute(GameObject wizard);
 }

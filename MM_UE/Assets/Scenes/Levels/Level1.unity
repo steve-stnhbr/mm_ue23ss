@@ -10311,6 +10311,10 @@ PrefabInstance:
       propertyPath: maxDistance
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 1776457117238904731, guid: d98426e99ed416646821204d42141bb8, type: 3}
+      propertyPath: turbineInactiveSpeed
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1776457117238904734, guid: d98426e99ed416646821204d42141bb8, type: 3}
       propertyPath: m_Name
       value: Wizard Player
@@ -20868,24 +20872,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e17b81d7dcc758429fce62fedaad532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UISprite: {fileID: 21300000, guid: f82dfc5fc3c5a8f4080a3550427019c8, type: 3}
+  UISprite: {fileID: 21300000, guid: e685b654e3c4fdd42aedff9c9809d00c, type: 3}
+  UISpriteSelected: {fileID: 21300000, guid: d0ae86e1568afcf49891d707a54f53d6, type: 3}
   UIColor: {r: 0.2210751, g: 0.4973001, b: 0.5660378, a: 1}
   prefab: {fileID: 7819710796523589834, guid: 743fca7512c529f4e89ede202ef1ffc5, type: 3}
---- !u!114 &928877266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 928877250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5abe13c3ce0bcf34797f3b1a2f08365a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UISprite: {fileID: 21300000, guid: 999d04c0ea94ccc41b3d80788160695b, type: 3}
-  UIColor: {r: 0.61746395, g: 0.48337483, b: 0.6886792, a: 1}
-  boxPrefab: {fileID: 0}
 --- !u!4 &933660408 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8584592782064796817, guid: a6b1ae1d791a1c44a98e3e35b553ffc8, type: 3}
@@ -22775,7 +22765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 826cb09466ea5904f9a12a1724477c8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showErrors: 0
+  showErrors: 1
   showBounds: 1
   levelWidth: 20
   levelHeight: 10
@@ -27051,7 +27041,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195361073}
   m_LocalRotation: {x: 0.0656651, y: -0, z: -0, w: 0.9978417}
-  m_LocalPosition: {x: 9.500191, y: 5.50011, z: -11.500231}
+  m_LocalPosition: {x: 9.500191, y: 5.50011, z: -10.50021}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44485,13 +44475,17 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 1195361076}
+    - target: {fileID: 98356972623023222, guid: 6ac0b0007131bc742b0ccdc681afaac0, type: 3}
+      propertyPath: jumpIntertialForce
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 739230869707406238, guid: 6ac0b0007131bc742b0ccdc681afaac0, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 739230869707406238, guid: 6ac0b0007131bc742b0ccdc681afaac0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.119328
+      value: 10.000208
       objectReference: {fileID: 0}
     - target: {fileID: 739230869707406238, guid: 6ac0b0007131bc742b0ccdc681afaac0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -44499,7 +44493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 739230869707406238, guid: 6ac0b0007131bc742b0ccdc681afaac0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.371871
+      value: 6.00012
       objectReference: {fileID: 0}
     - target: {fileID: 739230869707406238, guid: 6ac0b0007131bc742b0ccdc681afaac0, type: 3}
       propertyPath: m_LocalRotation.w

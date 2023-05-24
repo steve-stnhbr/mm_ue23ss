@@ -14,6 +14,9 @@ public class WizardPlayerMovement: MonoBehaviour
     [Tooltip("This value describes how far away from the mouse no more force is exerted on the wizard player")]
     public float maxDistanceToMouse;
 
+    [Tooltip("This value determines at what player speed the turbine shuts off")]
+    public float turbineInactiveSpeed;
+
     Rigidbody rigidbody;
 
     // Start is called before the first frame update
@@ -37,6 +40,10 @@ public class WizardPlayerMovement: MonoBehaviour
         {
             moveTo(LevelManager.getCurrentLevel().worldPositionToLevelPosition(raycastHit.point));
         }
+        
+        ParticleSystem ps = GetComponentInChildren<ParticleSystem>();
+        ParticleSystem.EmissionModule emission = ps.emission;
+        emission.enabled = rigidbody.velocity.magnitude > .1;
     }
 
     void FixedUpdate()
@@ -58,5 +65,9 @@ public class WizardPlayerMovement: MonoBehaviour
         Vector3 force = (position - transform.position) * (mouseGravitation * (rigidbody.mass / distance * distance));
         Vector3 xz = new Vector3(force.x, 0, force.z);
         rigidbody.AddForce(xz, ForceMode.Acceleration);
+        if (force.magnitude > turbineInactiveSpeed)
+        {
+            rigidbody.transform.rotation = Quaternion.Slerp(rigidbody.transform.rotation, Quaternion.LookRotation(rigidbody.velocity), Time.deltaTime * 40f);
+        }
     }
 }

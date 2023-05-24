@@ -6,6 +6,7 @@ public abstract class WizardSkill : MonoBehaviour
 {
     [Header("UI elements")]
     public Sprite UISprite;
+    public Sprite UISpriteSelected;
     public Color UIColor;
 
     public abstract string skillName { get; }

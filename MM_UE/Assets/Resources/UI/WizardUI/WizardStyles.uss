@@ -2,9 +2,23 @@
 	--selected-color: red;
 }
 .selected {
-	border-color: var(--selected-color);
+	/*border-color: var(--selected-color);*/
 }
 
+.selected > #selected {
+	display: flex;
+}
+
+.selected > #idle {
+	display: none;
+}
+
+#selected {
+	display: none;
+}
+
+/*
 .element {
 	border-width: 5px;
 }
+*/

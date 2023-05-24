@@ -79,14 +79,11 @@ public class WizardSkillBehaviour : MonoBehaviour
             Label label = template.Q<Label>();
             label.text = skill.skillName;
 
-            Image content = template.Q<Image>("content");
-            content.image = skill.UISprite.texture;
+            Image idle = template.Q<Image>("idle");
+            idle.image = skill.UISprite.texture;
 
-            
-            Image outline = template.Q<Image>("outline");
-            outline.image = AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/Resources/UI/Sprites/outline.png");
-
-            template.AddToClassList("element");
+            Image selected = template.Q<Image>("selected");
+            selected.image = skill.UISpriteSelected.texture;
 
             skillContainers[i] = template;
             root.Q<GroupBox>().Add(template);

@@ -43,7 +43,7 @@ public class WizardPlayerMovement: MonoBehaviour
         
         ParticleSystem ps = GetComponentInChildren<ParticleSystem>();
         ParticleSystem.EmissionModule emission = ps.emission;
-        emission.enabled = rigidbody.velocity.magnitude > .1;
+        emission.enabled = rigidbody.velocity.magnitude > turbineInactiveSpeed;
     }
 
     void FixedUpdate()
@@ -65,7 +65,7 @@ public class WizardPlayerMovement: MonoBehaviour
         Vector3 force = (position - transform.position) * (mouseGravitation * (rigidbody.mass / distance * distance));
         Vector3 xz = new Vector3(force.x, 0, force.z);
         rigidbody.AddForce(xz, ForceMode.Acceleration);
-        if (force.magnitude > turbineInactiveSpeed)
+        if (force.magnitude > .3f)
         {
             rigidbody.transform.rotation = Quaternion.Slerp(rigidbody.transform.rotation, Quaternion.LookRotation(rigidbody.velocity), Time.deltaTime * 40f);
         }

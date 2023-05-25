@@ -20876,6 +20876,22 @@ MonoBehaviour:
   UISpriteSelected: {fileID: 21300000, guid: d0ae86e1568afcf49891d707a54f53d6, type: 3}
   UIColor: {r: 0.2210751, g: 0.4973001, b: 0.5660378, a: 1}
   prefab: {fileID: 7819710796523589834, guid: 743fca7512c529f4e89ede202ef1ffc5, type: 3}
+--- !u!114 &928877266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928877250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5abe13c3ce0bcf34797f3b1a2f08365a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UISprite: {fileID: 21300000, guid: ddf2e76e8a1f88f46ae1e42277850b48, type: 3}
+  UISpriteSelected: {fileID: 21300000, guid: f09eae8c0ea04254b90c5386a034a225, type: 3}
+  UIColor: {r: 0, g: 0, b: 0, a: 0}
+  boxPrefab: {fileID: 0}
 --- !u!4 &933660408 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8584592782064796817, guid: a6b1ae1d791a1c44a98e3e35b553ffc8, type: 3}
@@ -22765,7 +22781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 826cb09466ea5904f9a12a1724477c8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showErrors: 1
+  showErrors: 0
   showBounds: 1
   levelWidth: 20
   levelHeight: 10
@@ -41244,6 +41260,10 @@ PrefabInstance:
     - target: {fileID: 8584592782064796817, guid: a6b1ae1d791a1c44a98e3e35b553ffc8, type: 3}
       propertyPath: m_RootOrder
       value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584592782064796817, guid: a6b1ae1d791a1c44a98e3e35b553ffc8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8584592782064796817, guid: a6b1ae1d791a1c44a98e3e35b553ffc8, type: 3}
       propertyPath: m_LocalPosition.x

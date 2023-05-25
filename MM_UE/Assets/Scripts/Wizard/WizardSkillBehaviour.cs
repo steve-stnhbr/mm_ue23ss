@@ -85,6 +85,8 @@ public class WizardSkillBehaviour : MonoBehaviour
             Image selected = template.Q<Image>("selected");
             selected.image = skill.UISpriteSelected.texture;
 
+            template.AddToClassList("element");
+
             skillContainers[i] = template;
             root.Q<GroupBox>().Add(template);
         }

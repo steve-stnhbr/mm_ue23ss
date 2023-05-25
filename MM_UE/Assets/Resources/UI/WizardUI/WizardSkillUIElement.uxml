@@ -2,8 +2,8 @@
     <Style src="project://database/Assets/Resources/UI/WizardUI/Skill.uss?fileID=7433441132597879392&amp;guid=cca063fd75f022f4fa93110487aaaa61&amp;type=3#Skill" />
     <Style src="project://database/Assets/Resources/UI/WizardUI/WizardStyles.uss?fileID=7433441132597879392&amp;guid=1f94e4caed8da2a45b8693ff66ad4bba&amp;type=3#WizardStyles" />
     <ui:VisualElement class="aspect-ratioed" style="width: 99px; height: 66px;">
-        <ui:Image name="selected" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0;" />
-        <ui:Image name="idle" style="position: absolute; left: 1px; top: 0; right: 0; bottom: -15px;" />
+        <ui:Image name="idle" style="position: relative; left: 0; top: 0; right: 0; bottom: 0;" />
+        <ui:Image name="selected" style="position: relative; left: 0; top: 0; right: 0; bottom: 0;" />
     </ui:VisualElement>
     <ui:Label text="skill_name" display-tooltip-when-elided="true" name="text" style="height: 16px; width: 100px; position: relative; bottom: 0; left: 0;" />
 </ui:UXML>

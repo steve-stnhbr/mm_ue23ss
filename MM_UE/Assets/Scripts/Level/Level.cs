@@ -30,7 +30,13 @@ public abstract class Level : MonoBehaviour
     [Tooltip("The layers that are checked on their voxel position")]
     public LayerMask checkedLayers;
 
+    [Tooltip("A prefab for the walls created around the Levels bounds")]
+    public GameObject wallPrefab;
+
     public string sceneName;
+
+    [Tooltip("The material that is applied to the walls surrounding the level")]
+    public Material wallMaterial;
 
     Vector3 levelSize;
 
@@ -38,6 +44,7 @@ public abstract class Level : MonoBehaviour
     void Start()
     {
         levelSize = new Vector3(levelWidth, levelHeight, levelDepth);
+        createWallGameObjects();
     }
 
     public abstract void Stop();
@@ -107,5 +114,72 @@ public abstract class Level : MonoBehaviour
                 return l;
         }
         return null;
+    }
+
+    private void createWallGameObjects()
+    {
+
+        // front wall
+        createPlaneForCorners(new Vector3(0, 0, 0), new Vector3(levelWidth, 0, 0), new Vector3(levelWidth, levelHeight, 0), new Vector3(0, levelHeight, 0));
+        // hind wall
+        createPlaneForCorners(new Vector3(0, 0, levelDepth), new Vector3(0, levelHeight, levelDepth), new Vector3(levelWidth, levelHeight, levelDepth), new Vector3(levelWidth, 0, levelDepth));
+        //left wall
+        createPlaneForCorners(new Vector3(levelWidth, 0, 0), new Vector3(levelWidth, 0, levelDepth), new Vector3(levelWidth, levelHeight, levelDepth), new Vector3(levelWidth, levelHeight, 0));
+        // right wall
+        createPlaneForCorners(new Vector3(0, levelHeight, 0), new Vector3(0, levelHeight, levelDepth), new Vector3(0, 0, levelDepth), new Vector3(0, 0, 0));
+        // Ceiling
+        createPlaneForCorners(new Vector3(0, levelHeight, 0), new Vector3(levelWidth, levelHeight, 0), new Vector3(levelWidth, levelHeight, levelDepth), new Vector3(0, levelHeight, levelDepth));
+
+        // bottom wall
+        createPlaneForCorners(new Vector3(0, 0, 0), new Vector3(levelWidth, 0, 0), new Vector3(levelWidth, -100, 0), new Vector3(0, -100, 0));
+        // left Wall
+        createPlaneForCorners(new Vector3(-100, -100, 0), new Vector3(-100, 100, 0), new Vector3(0, 100, 0), new Vector3(0, -100, 0));
+        // right wall
+        createPlaneForCorners(new Vector3(levelWidth, -100, 0), new Vector3(levelWidth, 100, 0), new Vector3(100, 100, 0), new Vector3(100, -100, 0));
+        // top wall
+        createPlaneForCorners(new Vector3(0, 100, 0), new Vector3(levelWidth, 100, 0), new Vector3(levelWidth, levelHeight, 0), new Vector3(0, levelHeight, 0));
+        
+        // TODO: add bound walls for other perspectives
+    }
+
+    private void createPlaneForCorners(Vector3 corner1, Vector3 corner2, Vector3 corner3, Vector3 corner4)
+    {
+        GameObject plane = GameObject.CreatePrimitive(PrimitiveType.Plane);
+        Mesh mesh = new Mesh();
+        Vector3 half = Vector3.one / 2;
+        mesh.vertices = new Vector3[]
+        {
+            corner1 - half,
+            corner2 - half,
+            corner3 - half,
+            corner4 - half
+        };
+
+        mesh.triangles = new int[]
+        {
+            0,1,2,2,3,0
+        };
+
+        Plane geoPlane = new Plane();
+        geoPlane.Set3Points(corner1, corner2, corner3);
+        Vector3 normal = geoPlane.normal;
+
+        mesh.normals = new Vector3[] {
+            normal,
+            normal,
+            normal,
+            normal
+        };
+
+        plane.GetComponent<MeshFilter>().mesh = mesh;
+        plane.GetComponent<MeshCollider>().sharedMesh = mesh;
+
+        plane.GetComponent<MeshRenderer>().material = wallMaterial;
+
+        /*
+        plane.transform.position = (corner1 + corner2 + corner3 + corner4) / 4;
+        Bounds bounds = plane.GetComponent<MeshFilter>().mesh.bounds;
+        bounds.extents = new Vector3(20, 0, 50);
+        */
     }
 }

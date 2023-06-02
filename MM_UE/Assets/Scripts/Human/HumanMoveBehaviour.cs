@@ -61,7 +61,7 @@ public class HumanMoveBehaviour : HumanGenericBehaviour
 			behaviourManager.LockTempBehaviour(this.behaviourCode);
 			behaviourManager.GetAnim.SetBool(jumpBool, true);
 			// Is a locomotion jump?
-			if (behaviourManager.GetAnim.GetFloat(speedFloat) > 0.1)
+			if (behaviourManager.GetAnim.GetFloat(speedFloat) >= 0.0)
 			{
 				// Temporarily change player friction to pass through obstacles.
 				GetComponent<CapsuleCollider>().material.dynamicFriction = 0f;
@@ -80,7 +80,10 @@ public class HumanMoveBehaviour : HumanGenericBehaviour
 			// Keep forward movement while in the air.
 			if (!behaviourManager.IsGrounded() && !isColliding && behaviourManager.GetTempLockStatus())
 			{
-				behaviourManager.GetRigidBody.AddForce(transform.forward * jumpIntertialForce * Physics.gravity.magnitude * sprintSpeed, ForceMode.Acceleration);
+				float sprintSpeed = behaviourManager.IsSprinting() ? 1.5f : 1f;
+				float jumpSpeed = new Vector2 (behaviourManager.GetH, behaviourManager.GetV).magnitude * 1.3f;
+
+				behaviourManager.GetRigidBody.AddForce(transform.forward * jumpIntertialForce * Physics.gravity.magnitude * jumpSpeed * sprintSpeed, ForceMode.Acceleration);
 			}
 			// Has landed?
 			if ((behaviourManager.GetRigidBody.velocity.y < 0) && behaviourManager.IsGrounded())

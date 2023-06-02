@@ -1346,10 +1346,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56f7139882fc0d540a21f9ad2bb9a094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 0.15
-  runSpeed: 1
-  sprintSpeed: 2
-  speedDampTime: 0.05
+  walkSpeed: 0.75
+  runSpeed: 0.75
+  sprintSpeed: 1.5
+  speedDampTime: 0.01
   jumpButton: HumanJump
   jumpHeight: 1.5
   jumpIntertialForce: 10

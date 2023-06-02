@@ -9,6 +9,9 @@ public class PressurePlate : InteractableOnCollision
 {
     [Header("PressurePlate")]
     [SerializeField]
+    [Tooltip("Should the plate stay active when activated once")]
+    bool oneTimeUse = false;
+    [SerializeField]
     [Tooltip("Negative Height to where the plate moves, when activated")]
     float localDepressionOnActivate = 0.5f;
     [SerializeField]
@@ -29,7 +32,7 @@ public class PressurePlate : InteractableOnCollision
     float minDepressionHeight;
     bool state = false;
 
-    protected void Start()
+    void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
         inactiveMaterial = meshRenderer.material;
@@ -38,10 +41,14 @@ public class PressurePlate : InteractableOnCollision
 
     }
 
-    protected void FixedUpdate()
+    void FixedUpdate()
     {
-        UpdateDepression(Time.fixedDeltaTime / (-timeToDepress*2));
+        if (!oneTimeUse)
+        {
+            UpdateDepression(Time.fixedDeltaTime / (-timeToDepress*2));
+        }
         UpdatePlateHeight();
+        
     }
 
     protected override void WhileCollision(EnumActor actor)
@@ -49,7 +56,7 @@ public class PressurePlate : InteractableOnCollision
         UpdateDepression(Time.fixedDeltaTime / timeToDepress);
     }
 
-    protected void UpdateDepression(float change)
+    void UpdateDepression(float change)
     {
         depressionRate = Mathf.Clamp01(depressionRate + change);
         if (!state && depressionRate>0.75)
@@ -64,13 +71,13 @@ public class PressurePlate : InteractableOnCollision
         }
     }
 
-    protected void UpdatePlateHeight()
+    void UpdatePlateHeight()
     {
         float depressionHeight = maxDepressionHeight - (maxDepressionHeight - minDepressionHeight) * depressionRate;
         transform.localPosition = new Vector3(transform.localPosition.x, depressionHeight, transform.localPosition.z);
     }
 
-    protected void OnActivate()
+    void OnActivate()
     {
         meshRenderer.material = activeMaterial;
         if(objectToActivate != null)
@@ -79,7 +86,7 @@ public class PressurePlate : InteractableOnCollision
         }
     }
 
-    protected void OnDeactivate()
+    void OnDeactivate()
     {
         meshRenderer.material = inactiveMaterial;
         if (objectToActivate != null)

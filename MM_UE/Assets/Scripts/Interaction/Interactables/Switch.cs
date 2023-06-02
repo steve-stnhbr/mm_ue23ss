@@ -16,7 +16,7 @@ public abstract class Switch : Interactable
     protected override void Activate(EnumActor actor)
     {
         // check time between activations
-        if(Time.time-lastActivationTime >= delayBetweenActivations)
+        if(Time.time-lastActivationTime >= delayBetweenActivations || actor == EnumActor.Script)
         {
             // change state
             state = !state;

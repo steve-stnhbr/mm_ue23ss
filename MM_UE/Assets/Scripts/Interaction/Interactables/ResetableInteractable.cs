@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ResetableButton : Interactable
+public abstract class ResetableInteractable : Interactable
 {
-    [Header("Button")]
+    
     public bool state = false;
 
     [Header("Timed Reset")]
@@ -38,6 +38,9 @@ public abstract class ResetableButton : Interactable
         if (state)
         {
             DoWhileOnFixed();
+        } else
+        {
+            DoWhileOffFixed();
         }
     }
 
@@ -47,9 +50,9 @@ public abstract class ResetableButton : Interactable
     // called every Fixed Update while button is on
     protected abstract void DoWhileOnFixed();
 
+    // called every Fixed Update while button is off
+    protected abstract void DoWhileOffFixed();
+
     // called either after a delay after switching on or when the button should reset
-    protected void Reset()
-    {
-        state = false;
-    }
+    protected abstract void Reset();
 }

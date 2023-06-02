@@ -18,7 +18,12 @@ public class HumanInteraction : MonoBehaviour
                 otherScript.Interact(EnumActor.Human);
             }
         }
-        
+        IInteractableOnCollision otherScriptOnCollision = other.GetComponent<IInteractableOnCollision>();
+        if (otherScriptOnCollision != null)
+        {
+            otherScriptOnCollision.Collide(EnumActor.Human);
+        }
+
     }
     
 }

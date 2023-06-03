@@ -1,0 +1,11 @@
+.selected #selected {
+	display: flex;
+}
+
+.selected #idle {
+	display: none;
+}
+
+#selected {
+	display: none;
+}

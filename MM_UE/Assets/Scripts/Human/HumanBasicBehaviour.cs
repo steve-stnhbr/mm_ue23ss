@@ -69,8 +69,8 @@ public class HumanBasicBehaviour : MonoBehaviour
 		v = Input.GetAxis(verticalAxis);
 
 		// Set the input axes on the Animator Controller.
-		anim.SetFloat(hFloat, h, 0.1f, Time.deltaTime);
-		anim.SetFloat(vFloat, v, 0.1f, Time.deltaTime);
+		anim.SetFloat(hFloat, h, 0.01f, Time.deltaTime);
+		anim.SetFloat(vFloat, v, 0.01f, Time.deltaTime);
 
 		// Toggle sprint by input.
 		sprint = Input.GetButton (sprintButton);

@@ -1,3 +1,60 @@
-.title{
-	font-size: 50;
+.title {
+    font-size: 50;
+    color: rgba(63, 63, 63, 255);
+}
+
+.headline {
+    font-size: 30px;
+    color: rgb(63, 63, 63);
+}
+
+.menu-button {
+    width: 30%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    opacity: 1;
+    background-color: rgba(65, 65, 65, 255);
+    color: rgba(207, 207, 207, 255);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.menu-button:hover {
+    width: 30%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    opacity: 1;
+    background-color: rgba(29, 29, 29, 255);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.menu-button:active {
+    width: 30%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    opacity: 1;
+    background-color: rgb(161, 161, 161);
+    -unity-background-image-tint-color: rgba(241, 241, 241, 255);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.background {
+    background-color: rgba(149, 169, 171, 255);
 }

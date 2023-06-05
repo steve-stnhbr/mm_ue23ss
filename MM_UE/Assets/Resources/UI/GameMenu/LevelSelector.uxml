@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/UI/GameMenu/GameMenu.uss?fileID=7433441132597879392&amp;guid=2d28bfffda0e7134ea3e7890b8848ea8&amp;type=3#GameMenu" />
+    <ui:VisualElement class="background" style="flex-grow: 1;">
+        <ui:ListView focusable="true" name="LevelListView" style="flex-grow: 1;" />
+        <ui:VisualElement style="flex-grow: 1; align-items: center; justify-content: space-around;">
+            <ui:Button text="Back" display-tooltip-when-elided="true" class="menu-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

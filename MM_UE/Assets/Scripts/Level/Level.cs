@@ -299,7 +299,8 @@ public abstract class Level : MonoBehaviour
                 // Setze den Vertex, Normal und UV
                 vertices[index] = position;
                 normals[index] = Vector3.Cross(corner4 - corner1, corner2 - corner1).normalized;
-                uvs[index] = new Vector2((float)j / widthSegments, (float)i / lengthSegments);
+                //uvs[index] = new Vector2((float)j / widthSegments, (float)i / lengthSegments);
+                uvs[index] = new Vector2((float)j % 2, (float)i % 2);
             }
         }
 

@@ -2,11 +2,9 @@
     <Style src="project://database/Assets/Resources/UI/GameMenu/GameMenu.uss?fileID=7433441132597879392&amp;guid=2d28bfffda0e7134ea3e7890b8848ea8&amp;type=3#GameMenu" />
     <ui:IMGUIContainer />
     <ui:VisualElement class="background" style="flex-grow: 1; justify-content: space-between; align-items: stretch;">
-        <ui:VisualElement name="Container" style="align-items: center; justify-content: space-around; flex-grow: 1;">
-            <ui:Label text="COOP-Game" display-tooltip-when-elided="true" name="GameTitle" class="title" />
-        </ui:VisualElement>
+        <ui:VisualElement name="Container" style="align-items: center; justify-content: space-around; flex-grow: 1;" />
         <ui:VisualElement name="Container" style="flex-grow: 1; flex-direction: row; justify-content: space-around; align-items: center;">
-            <ui:Button text="New Game" display-tooltip-when-elided="true" name="ButtonNewGame" class="menu-button" />
+            <ui:Button text="Resume" display-tooltip-when-elided="true" name="ButtonResume" class="menu-button" />
             <ui:Button text="Level Selector" display-tooltip-when-elided="true" name="ButtonLevelSelector" class="menu-button" />
             <ui:Button text="Quit" display-tooltip-when-elided="true" name="ButtonQuit" class="menu-button" />
         </ui:VisualElement>

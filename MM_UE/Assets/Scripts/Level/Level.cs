@@ -337,5 +337,6 @@ public abstract class Level : MonoBehaviour
         plane.AddComponent<MeshFilter>().mesh = mesh;
         plane.AddComponent<MeshRenderer>().material = wallMaterial;
         plane.AddComponent<MeshCollider>().sharedMesh = mesh;
+        plane.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
     }
 }

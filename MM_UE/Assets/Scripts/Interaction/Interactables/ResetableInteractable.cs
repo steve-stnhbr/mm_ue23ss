@@ -22,6 +22,7 @@ public abstract class ResetableInteractable : Interactable
     {
         if (!state)
         {
+            lastActivationTime = Time.time;
             state = true;
             TurnOn(actor);
         }
@@ -30,7 +31,7 @@ public abstract class ResetableInteractable : Interactable
     protected void FixedUpdate()
     {
         // check time for reset
-        if (hasTimedReset && Time.time - lastActivationTime >= timedResetDelay)
+        if (state && hasTimedReset && Time.time - lastActivationTime >= timedResetDelay)
         {
             Reset();
         }

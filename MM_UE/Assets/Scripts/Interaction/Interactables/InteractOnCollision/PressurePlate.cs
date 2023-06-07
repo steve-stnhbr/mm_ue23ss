@@ -11,75 +11,35 @@ public class PressurePlate : InteractableOnCollision
     [SerializeField]
     [Tooltip("Should the plate stay active when activated once")]
     bool oneTimeUse = false;
-    [SerializeField]
-    [Tooltip("Negative Height to where the plate moves, when activated")]
-    float localDepressionOnActivate = 0.5f;
-    [SerializeField]
-    [Tooltip("Time in seconds the plate needs to fully depress")]
-    float timeToDepress = 1f;
-    [Tooltip("When active, the plate switches to this material, when inactive, reverts back")]
-    public Material activeMaterial;
     [Tooltip("When set, the object gets activated")]
     public Interactable objectToActivate;
-    
 
+    [SerializeField]
+    Animator animator;
 
-    Material inactiveMaterial;
-    MeshRenderer meshRenderer;
-    // Depression percent of the pressure plate [0-1]
-    float depressionRate = 0;
-    float maxDepressionHeight;
-    float minDepressionHeight;
     bool state = false;
 
-    void Start()
+    private void OnTriggerExit(Collider other)
     {
-        meshRenderer = GetComponent<MeshRenderer>();
-        inactiveMaterial = meshRenderer.material;
-        maxDepressionHeight = transform.localPosition.y;
-        minDepressionHeight = maxDepressionHeight - localDepressionOnActivate;
-
-    }
-
-    void FixedUpdate()
-    {
-        if (!oneTimeUse)
-        {
-            UpdateDepression(Time.fixedDeltaTime / (-timeToDepress*2));
-        }
-        UpdatePlateHeight();
-        
-    }
-
-    protected override void WhileCollision(EnumActor actor)
-    {
-        UpdateDepression(Time.fixedDeltaTime / timeToDepress);
-    }
-
-    void UpdateDepression(float change)
-    {
-        depressionRate = Mathf.Clamp01(depressionRate + change);
-        if (!state && depressionRate>0.75)
-        {
-            state = true;
-            OnActivate();
-        }
-        else if (state && depressionRate < 0.75)
+        if(state && !oneTimeUse)
         {
             state = false;
             OnDeactivate();
         }
     }
 
-    void UpdatePlateHeight()
+    protected override void WhileCollision(EnumActor actor)
     {
-        float depressionHeight = maxDepressionHeight - (maxDepressionHeight - minDepressionHeight) * depressionRate;
-        transform.localPosition = new Vector3(transform.localPosition.x, depressionHeight, transform.localPosition.z);
+        if (!state)
+        {
+            state = true;
+            OnActivate();
+        }
     }
 
     void OnActivate()
     {
-        meshRenderer.material = activeMaterial;
+        animator.SetBool("Active", true);
         if(objectToActivate != null)
         {
             objectToActivate.Interact(EnumActor.Script);
@@ -88,7 +48,7 @@ public class PressurePlate : InteractableOnCollision
 
     void OnDeactivate()
     {
-        meshRenderer.material = inactiveMaterial;
+        animator.SetBool("Active", false);
         if (objectToActivate != null)
         {
             objectToActivate.Interact(EnumActor.Script);

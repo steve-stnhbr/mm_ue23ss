@@ -2,16 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestSwitch : Switch
+public class GoalActivatorSwitch : Switch
 {
-    public Material onMaterial;
-    public Material offMaterial;
-    public MeshRenderer meshRenderer;
-
+    [SerializeField] Animator animator;
+    [SerializeField] GameObject LevelEndObject;
 
     protected override void DoWhileOffFixed()
     {
-
     }
 
     protected override void DoWhileOnFixed()
@@ -20,12 +17,15 @@ public class TestSwitch : Switch
 
     protected override void SwitchOff(EnumActor actor)
     {
-        meshRenderer.material = offMaterial;
+        animator.SetBool("Active", false);
+        LevelEndObject.SetActive(false);
     }
 
     protected override void SwitchOn(EnumActor actor)
     {
-        meshRenderer.material = onMaterial;
+        animator.SetBool("Active", true);
+        LevelEndObject.SetActive(true);
     }
+
 
 }

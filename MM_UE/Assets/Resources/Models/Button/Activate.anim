@@ -20,7 +20,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0, y: 0, z: 0}
+        value: {x: -0, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -28,8 +28,8 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 0.28333333
-        value: {x: 0, y: -0.12, z: 0}
+        time: 0.45
+        value: {x: -0, y: -0.18, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -39,7 +39,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: ButtonPad
+    path: Button/ButtonPad
   m_ScaleCurves: []
   m_FloatCurves:
   - curve:
@@ -55,8 +55,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.28333333
-        value: 0.37712362
+        time: 0.45
+        value: 0.86517
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -66,8 +66,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: material._Emission.x
-    path: ButtonBottom
+    attribute: material._EmissionColor.x
+    path: Button/ButtonBottom
     classID: 23
     script: {fileID: 0}
   - curve:
@@ -83,8 +83,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.28333333
-        value: 0.8873497
+        time: 0.45
+        value: 3.56055
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -94,8 +94,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: material._Emission.y
-    path: ButtonBottom
+    attribute: material._EmissionColor.y
+    path: Button/ButtonBottom
     classID: 23
     script: {fileID: 0}
   - curve:
@@ -111,8 +111,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.28333333
-        value: 1.7081482
+        time: 0.45
+        value: 5.52375
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -122,8 +122,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: material._Emission.z
-    path: ButtonBottom
+    attribute: material._EmissionColor.z
+    path: Button/ButtonBottom
     classID: 23
     script: {fileID: 0}
   - curve:
@@ -139,8 +139,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.28333333
-        value: 0
+        time: 0.45
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -150,8 +150,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: material._Emission.w
-    path: ButtonBottom
+    attribute: material._EmissionColor.w
+    path: Button/ButtonBottom
     classID: 23
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -163,36 +163,36 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3763841679
+      path: 425492124
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2540107028
-      attribute: 127171522
+      path: 4219482455
+      attribute: 144923010
       script: {fileID: 0}
       typeID: 23
       customType: 22
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2540107028
-      attribute: 395606978
+      path: 4219482455
+      attribute: 413358466
       script: {fileID: 0}
       typeID: 23
       customType: 22
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2540107028
-      attribute: 664042434
+      path: 4219482455
+      attribute: 681793922
       script: {fileID: 0}
       typeID: 23
       customType: 22
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2540107028
-      attribute: 932477890
+      path: 4219482455
+      attribute: 950229378
       script: {fileID: 0}
       typeID: 23
       customType: 22
@@ -203,7 +203,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.28333333
+    m_StopTime: 0.45
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -224,7 +224,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
+        value: -0
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -232,8 +232,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.28333333
-        value: 0
+        time: 0.45
+        value: -0
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -244,7 +244,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: ButtonPad
+    path: Button/ButtonPad
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -260,8 +260,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.28333333
-        value: -0.12
+        time: 0.45
+        value: -0.18
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -272,7 +272,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: ButtonPad
+    path: Button/ButtonPad
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -288,7 +288,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.28333333
+        time: 0.45
         value: 0
         inSlope: 0
         outSlope: 0
@@ -300,7 +300,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: ButtonPad
+    path: Button/ButtonPad
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -316,8 +316,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.28333333
-        value: 0.37712362
+        time: 0.45
+        value: 0.86517
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -327,8 +327,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: material._Emission.x
-    path: ButtonBottom
+    attribute: material._EmissionColor.x
+    path: Button/ButtonBottom
     classID: 23
     script: {fileID: 0}
   - curve:
@@ -344,8 +344,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.28333333
-        value: 0.8873497
+        time: 0.45
+        value: 3.56055
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -355,8 +355,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: material._Emission.y
-    path: ButtonBottom
+    attribute: material._EmissionColor.y
+    path: Button/ButtonBottom
     classID: 23
     script: {fileID: 0}
   - curve:
@@ -372,8 +372,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.28333333
-        value: 1.7081482
+        time: 0.45
+        value: 5.52375
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -383,8 +383,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: material._Emission.z
-    path: ButtonBottom
+    attribute: material._EmissionColor.z
+    path: Button/ButtonBottom
     classID: 23
     script: {fileID: 0}
   - curve:
@@ -400,8 +400,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.28333333
-        value: 0
+        time: 0.45
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -411,8 +411,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: material._Emission.w
-    path: ButtonBottom
+    attribute: material._EmissionColor.w
+    path: Button/ButtonBottom
     classID: 23
     script: {fileID: 0}
   m_EulerEditorCurves: []

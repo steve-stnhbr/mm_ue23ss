@@ -11,6 +11,8 @@ public class HumanInteraction : MonoBehaviour
     {
         if (Time.time-lastInteractTime>interactDelay && Input.GetAxis("HumanInteract") > 0.5f)
         {
+            GetComponent<Animator>().SetBool("Interacts", true);
+
             lastInteractTime = Time.time;
             IInteractable otherScript = other.GetComponent<IInteractable>();
             if (otherScript != null)
@@ -25,5 +27,5 @@ public class HumanInteraction : MonoBehaviour
         }
 
     }
-    
+
 }

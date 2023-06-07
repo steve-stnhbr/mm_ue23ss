@@ -54,6 +54,7 @@ public abstract class Level : MonoBehaviour
         return levelSize;
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         if (showBounds) 
@@ -77,6 +78,7 @@ public abstract class Level : MonoBehaviour
             }
         }
     }
+#endif
 
     private bool gameObjectIsValid(GameObject go)
     {

@@ -55,13 +55,46 @@
     margin-right: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: rgba(115, 115, 115, 255);
+    background-color: rgb(115, 115, 115);
 }
 
 .level-selector-button:hover {
-    background-color: rgba(60, 60, 60, 255);
+    background-color: rgb(60, 60, 60);
 }
 
 .level-selector-button:active {
-    background-color: rgba(168, 168, 168, 255);
+    background-color: rgb(168, 168, 168);
+}
+
+.hud-button {
+    width: 10%;
+    height: 10%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgba(96, 96, 96, 255);
+    min-width: 80px;
+}
+
+.hud-button:hover {
+    background-color: rgba(67, 67, 67, 255);
+}
+
+.hud-button:active {
+    width: 10%;
+    height: 10%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgba(142, 142, 142, 255);
 }

@@ -19,6 +19,10 @@ public class GameMenu : MonoBehaviour
     [Tooltip("Object reference of a GameObject with the PauseUI")]
     [SerializeField] GameObject pauseUI;
     PauseMenuUI pauseScript;
+    [Tooltip("Object reference of a GameObject with the HUD")]
+    [SerializeField] GameObject hud;
+    HUD hudScript;
+
 
     [Tooltip("if true the menu starts with the main menu and doesnt allow pausing, if false it doesnt show ui and allows pausing")]
     [SerializeField] bool isStartMenu = false;
@@ -31,28 +35,43 @@ public class GameMenu : MonoBehaviour
         loadingScreenScript = loadingScreenUI.GetComponent<LoadingScreenUI>();
         levelSelectScript = levelSelectUI.GetComponent<LevelSelectUI>();
         pauseScript = pauseUI.GetComponent<PauseMenuUI>();
+        hudScript = hud.GetComponent<HUD>();
 
         if (isStartMenu)
         {
             mainMenuUI.SetActive(true);
+        } else
+        {
+            hud.SetActive(true);
         }
     }
 
     private void Update()
     {
-        if(Input.GetAxis("Menu Button")>0 && !isStartMenu && Time.time - lastPauseToggle > 0.3)
+        if(Input.GetAxis("MenuButton")>0 && !isStartMenu && Time.time - lastPauseToggle > 0.3)
         {
-            lastPauseToggle = Time.time;
-            bool wasPauseActive = pauseUI.active;
-            if (wasPauseActive)
-            {
-                Time.timeScale = 0;
-            } else
-            {
-                Time.timeScale = 1;
-            }
-            closeMenus();
-            pauseUI.SetActive(!wasPauseActive);
+            togglePauseMenu();
+        }
+        if (Input.GetAxis("ResetButton") > 0 && !isStartMenu && Time.time - lastPauseToggle > 0.3)
+        {
+            restartLevel();
+        }
+    }
+
+    public void togglePauseMenu()
+    {
+        lastPauseToggle = Time.time;
+        bool wasPauseActive = pauseUI.active;
+        closeMenus();
+        hud.SetActive(wasPauseActive);
+        pauseUI.SetActive(!wasPauseActive);
+    }
+
+    public void restartLevel()
+    {
+        if (!isStartMenu)
+        {
+            loadLevel(SceneManager.GetActiveScene().name);
         }
     }
 
@@ -61,7 +80,7 @@ public class GameMenu : MonoBehaviour
         if (!isStartMenu)
         {
             closeMenus();
-            Time.timeScale = 1;
+            hud.SetActive(true);
         }
     }
 
@@ -75,7 +94,6 @@ public class GameMenu : MonoBehaviour
         else
         {
             pauseUI.SetActive(true);
-            Time.timeScale = 0;
         }
         
     }
@@ -126,5 +144,6 @@ public class GameMenu : MonoBehaviour
         loadingScreenUI.SetActive(false);
         levelSelectUI.SetActive(false);
         pauseUI.SetActive(false);
+        hud.SetActive(false);
     }
 }

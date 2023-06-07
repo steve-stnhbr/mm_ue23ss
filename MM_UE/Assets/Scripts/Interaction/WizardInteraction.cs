@@ -19,6 +19,11 @@ public class WizardInteraction : MonoBehaviour
                 otherScript.Interact(EnumActor.Wizard);
             }
         }
+        IInteractableOnCollision otherScriptOnCollision = other.GetComponent<IInteractableOnCollision>();
+        if (otherScriptOnCollision != null)
+        {
+            otherScriptOnCollision.Collide(EnumActor.Wizard);
+        }
 
     }
 }

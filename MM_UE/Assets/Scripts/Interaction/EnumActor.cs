@@ -3,5 +3,6 @@ public enum EnumActor
 {
     Human,
     Wizard,
-    Object
+    Object,
+    Script
 }

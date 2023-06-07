@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 [CustomEditor(typeof(Level))]
 [ExecuteInEditMode]
@@ -34,7 +36,7 @@ public class LevelEditor : Editor
 
         
     }
-
+#if UNITY_EDITOR
     public void OnSceneGUI()
     {
         Level level = (Level)target;
@@ -62,6 +64,6 @@ public class LevelEditor : Editor
 
         }
     }
-
+#endif
 
 }

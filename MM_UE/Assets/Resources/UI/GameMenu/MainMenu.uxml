@@ -5,6 +5,12 @@
         <ui:VisualElement name="Container" style="align-items: center; justify-content: space-around; flex-grow: 1;">
             <ui:Label text="COOP-Game" display-tooltip-when-elided="true" name="GameTitle" class="title" />
         </ui:VisualElement>
+        <ui:VisualElement name="Container" style="align-items: center; justify-content: space-around; flex-grow: 0;">
+            <ui:VisualElement name="Container" style="flex-direction: row; align-items: flex-end; justify-content: center; width: 60%;">
+                <ui:SliderInt picking-mode="Ignore" label="Volume" value="100" high-value="100" name="VolumeSlider" style="flex-direction: column; font-size: 20px; color: rgb(58, 58, 58); flex-grow: 1; -unity-text-outline-color: rgb(0, 0, 0);" />
+                <ui:Label text="100%" display-tooltip-when-elided="true" name="VolumeLabel" style="font-size: 20px; color: rgb(84, 84, 84); width: 60px; align-items: flex-end; -unity-text-align: lower-right; justify-content: flex-end;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
         <ui:VisualElement name="Container" style="flex-grow: 1; flex-direction: row; justify-content: space-around; align-items: center;">
             <ui:Button text="New Game" display-tooltip-when-elided="true" name="ButtonNewGame" class="menu-button" />
             <ui:Button text="Level Selector" display-tooltip-when-elided="true" name="ButtonLevelSelector" class="menu-button" />

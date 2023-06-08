@@ -11,6 +11,11 @@ public class TextTerminal : Switch
     [SerializeField] TextMeshPro inWorldText;
     [SerializeField] Interactable objectToActivate;
     [SerializeField] InputHandler inputHandler;
+    [SerializeField] AudioClip processingClip;
+    [SerializeField] AudioClip successClip;
+    [SerializeField] AudioClip errorClip;
+
+    AudioSource audioSource;
 
     private TextTerminalUI terminalScript;
     private string terminalText = "";
@@ -19,6 +24,7 @@ public class TextTerminal : Switch
     private void Start()
     {
         terminalScript = terminalUI.GetComponent<TextTerminalUI>();
+        audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -47,19 +53,37 @@ public class TextTerminal : Switch
 
     public void EnterPassword()
     {
+        state = false;
+        audioSource.PlayOneShot(processingClip);
         inputHandler.EnableInputForInteraction();
         terminalUI.SetActive(false);
         terminalText = terminalScript.getText();
         inWorldText.text = terminalText.ToUpper();
-        if (terminalText.ToLower().Equals(password.ToLower()) && objectToActivate != null)
-        {
-            objectToActivate.Interact(EnumActor.Script);
-        }
+
+        StartCoroutine(processPassword());
     }
 
     public int getPasswordLength()
     {
         return password.Length;
+    }
+
+    IEnumerator processPassword()
+    {
+        yield return new WaitForSeconds(1);
+        if (terminalText.ToLower().Equals(password.ToLower()))
+        {
+            audioSource.PlayOneShot(successClip);
+            if (objectToActivate != null)
+            {
+                objectToActivate.Interact(EnumActor.Script);
+            }
+
+        }
+        else
+        {
+            audioSource.PlayOneShot(errorClip);
+        }
     }
 
 

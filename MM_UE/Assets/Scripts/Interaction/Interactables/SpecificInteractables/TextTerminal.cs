@@ -10,6 +10,7 @@ public class TextTerminal : Switch
     [SerializeField] string password;
     [SerializeField] TextMeshPro inWorldText;
     [SerializeField] Interactable objectToActivate;
+    [SerializeField] InputHandler inputHandler;
 
     private TextTerminalUI terminalScript;
     private string terminalText = "";
@@ -41,10 +42,12 @@ public class TextTerminal : Switch
     {
         terminalUI.SetActive(true);
         terminalScript.setText(terminalText.ToUpper());
+        inputHandler.DisableInputForInteraction();
     }
 
     public void EnterPassword()
     {
+        inputHandler.EnableInputForInteraction();
         terminalUI.SetActive(false);
         terminalText = terminalScript.getText();
         inWorldText.text = terminalText.ToUpper();

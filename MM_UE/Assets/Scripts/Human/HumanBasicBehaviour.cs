@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 // This class manages which player behaviour is active or overriding, and call its local functions.
 // Contains basic setup and common functions used by all the player behaviours.
-public class HumanBasicBehaviour : MonoBehaviour
+public class HumanBasicBehaviour : MonoBehaviour, IDisableInputForInteraction, IDisableInputForMenu
 {
 	public Transform playerCamera;                        // Reference to the camera that focus the player.
 	public float turnSmoothing = 0.06f;                   // Speed of turn when moving to match camera facing.
@@ -12,8 +12,8 @@ public class HumanBasicBehaviour : MonoBehaviour
     public string horizontalAxis = "HumanHorizontal";		// Default horizontal axis input name.
     public string sprintButton = "HumanSprint";           // Default sprint button input name.
 
-	private float h;                                      // Horizontal Axis.
-	private float v;                                      // Vertical Axis.
+	[SerializeField] private float h;                                      // Horizontal Axis.
+    [SerializeField] private float v;                                      // Vertical Axis.
 	private int currentBehaviour;                         // Reference to the current player behaviour.
 	private int defaultBehaviour;                         // The default behaviour of the player when any other is not active.
 	private int behaviourLocked;                          // Reference to temporary locked behaviour that forbids override.
@@ -29,6 +29,12 @@ public class HumanBasicBehaviour : MonoBehaviour
 	private Rigidbody rBody;                              // Reference to the player's rigidbody.
 	private int groundedBool;                             // Animator variable related to whether or not the player is on the ground.
 	private Vector3 colExtents;                           // Collider extents for ground test. 
+
+
+	private bool inputDisabledForInteraction = false;
+	private bool inputDisabledForMenu = false;
+	private float pauseH = 0;
+	private float pauseV = 0;
 
 	// Get current horizontal and vertical axes.
 	public float GetH { get { return h; } }
@@ -64,6 +70,11 @@ public class HumanBasicBehaviour : MonoBehaviour
 
 	void Update()
 	{
+		if(inputDisabledForInteraction || inputDisabledForMenu)
+		{
+			return;
+		} 
+
 		// Store the input axes.
 		h = Input.GetAxis(horizontalAxis);
 		v = Input.GetAxis(verticalAxis);
@@ -93,8 +104,9 @@ public class HumanBasicBehaviour : MonoBehaviour
 	// Call the FixedUpdate functions of the active or overriding behaviours.
 	void FixedUpdate()
 	{
-		// Call the active behaviour if no other is overriding.
-		bool isAnyBehaviourActive = false;
+
+        // Call the active behaviour if no other is overriding.
+        bool isAnyBehaviourActive = false;
 		if (behaviourLocked > 0 || overridingBehaviours.Count == 0)
 		{
 			foreach (HumanGenericBehaviour behaviour in behaviours)
@@ -326,6 +338,59 @@ public class HumanBasicBehaviour : MonoBehaviour
 		Ray ray = new Ray(this.transform.position + Vector3.up * 2 * colExtents.x, Vector3.down);
 		return Physics.SphereCast(ray, colExtents.x, colExtents.x + 0.2f);
 	}
+
+    public void DisableInputForInteraction()
+    {
+        inputDisabledForInteraction = true;
+		if(pauseH== 0 && pauseV == 0)
+		{
+			pauseH = h;
+			pauseV = v;
+		}
+		h = 0;
+		v = 0;
+		anim.speed = 0;
+		rBody.isKinematic = true;
+
+    }
+
+    public void EnableInputForInteraction()
+    {
+        h = pauseH;
+        pauseH = 0;
+        v = pauseV;
+        pauseV = 0;
+        inputDisabledForInteraction = false;
+        anim.speed = 1;
+        rBody.isKinematic = false;
+    }
+
+    public void DisableInputForMenu()
+    {
+        inputDisabledForMenu = true;
+        if (pauseH == 0 && pauseV == 0)
+        {
+            pauseH = h;
+            pauseV = v;
+        }
+        h = 0;
+        v = 0;
+        anim.SetFloat(hFloat, 0, 0f, Time.deltaTime);
+        anim.SetFloat(vFloat, 0, 0f, Time.deltaTime);
+        anim.speed = 0;
+        rBody.isKinematic = true;
+    }
+
+    public void EnableInputForMenu()
+    {
+        h = pauseH;
+		pauseH = 0;
+		v = pauseV;
+        pauseV = 0;
+        inputDisabledForMenu = false;
+        anim.speed = 1;
+        rBody.isKinematic = false;
+    }
 }
 
 // This is the base class for all player behaviours, any custom behaviour must inherit from this.

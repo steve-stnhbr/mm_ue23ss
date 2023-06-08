@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using UnityEngine.UIElements;
 using UnityEditor;
 
-public class WizardSkillBehaviour : MonoBehaviour
+public class WizardSkillBehaviour : MonoBehaviour, IDisableInputForMenu, IDisableInputForInteraction
 {
     private VisualElement root;
     public VisualTreeAsset skillTemplate;
@@ -14,6 +14,9 @@ public class WizardSkillBehaviour : MonoBehaviour
     public string selectedClass;
 
     int selectedSkill;
+
+    bool inputDisabledForMenu = false;
+    bool inputDisabledForInteraction = false;
 
     WizardSkill[] availableWizardSkillInstances;
     TemplateContainer[] skillContainers;
@@ -31,6 +34,11 @@ public class WizardSkillBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(inputDisabledForInteraction || inputDisabledForMenu)
+        {
+            return;
+        }
+
         if (Input.GetButtonDown("WizardInteract"))
         {
             availableWizardSkillInstances[selectedSkill].OnExecute(gameObject);
@@ -100,5 +108,25 @@ public class WizardSkillBehaviour : MonoBehaviour
     private void MarkSelected(TemplateContainer template)
     {
         template.AddToClassList(selectedClass);
+    }
+
+    public void DisableInputForMenu()
+    {
+        inputDisabledForMenu = true;
+    }
+
+    public void EnableInputForMenu()
+    {
+        inputDisabledForMenu = false;
+    }
+
+    public void DisableInputForInteraction()
+    {
+         inputDisabledForInteraction = true;
+    }
+
+    public void EnableInputForInteraction()
+    {
+        inputDisabledForInteraction = false;
     }
 }

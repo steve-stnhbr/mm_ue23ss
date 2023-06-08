@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-public class GameMenu : MonoBehaviour
+public class GameMenu : MonoBehaviour, IDisableInputForInteraction
 {
     [Tooltip("Object reference of a GameObject with the GameMenuUI")]
     [SerializeField] GameObject mainMenuUI;
@@ -22,6 +22,10 @@ public class GameMenu : MonoBehaviour
     [Tooltip("Object reference of a GameObject with the HUD")]
     [SerializeField] GameObject hud;
     HUD hudScript;
+    [Tooltip("Script reference the Input Handler")]
+    [SerializeField] InputHandler inputHandler;
+
+    bool inputDisabledForInteraction = false;
 
 
     [Tooltip("if true the menu starts with the main menu and doesnt allow pausing, if false it doesnt show ui and allows pausing")]
@@ -40,9 +44,12 @@ public class GameMenu : MonoBehaviour
         if (isStartMenu)
         {
             mainMenuUI.SetActive(true);
+            inputHandler.DisableInputForMenu();
+
         } else
         {
             hud.SetActive(true);
+            inputHandler.EnableInputForMenu();
         }
     }
 
@@ -52,7 +59,7 @@ public class GameMenu : MonoBehaviour
         {
             togglePauseMenu();
         }
-        if (Input.GetAxis("ResetButton") > 0 && !isStartMenu && Time.time - lastPauseToggle > 0.3)
+        if (Input.GetAxis("ResetButton") > 0 && !isStartMenu && Time.time - lastPauseToggle > 0.3 && !inputDisabledForInteraction)
         {
             restartLevel();
         }
@@ -63,6 +70,13 @@ public class GameMenu : MonoBehaviour
         lastPauseToggle = Time.time;
         bool wasPauseActive = pauseUI.active;
         closeMenus();
+        if (wasPauseActive)
+        {
+            inputHandler.EnableInputForMenu();
+        }else
+        {
+            inputHandler.DisableInputForMenu();
+        }
         hud.SetActive(wasPauseActive);
         pauseUI.SetActive(!wasPauseActive);
     }
@@ -81,6 +95,7 @@ public class GameMenu : MonoBehaviour
         {
             closeMenus();
             hud.SetActive(true);
+            inputHandler.EnableInputForMenu();
         }
     }
 
@@ -90,10 +105,12 @@ public class GameMenu : MonoBehaviour
         if (isStartMenu)
         {
             mainMenuUI.SetActive(true);
+            inputHandler.DisableInputForMenu();
         }
         else
         {
             pauseUI.SetActive(true);
+            inputHandler.DisableInputForMenu();
         }
         
     }
@@ -102,6 +119,7 @@ public class GameMenu : MonoBehaviour
     {
         closeMenus();
         levelSelectUI.SetActive(true);
+        inputHandler.DisableInputForMenu();
     }
 
     public void loadLevel(int level)
@@ -145,5 +163,15 @@ public class GameMenu : MonoBehaviour
         levelSelectUI.SetActive(false);
         pauseUI.SetActive(false);
         hud.SetActive(false);
+    }
+
+    public void DisableInputForInteraction()
+    {
+        inputDisabledForInteraction = true;
+    }
+
+    public void EnableInputForInteraction()
+    {
+        inputDisabledForInteraction = false;
     }
 }

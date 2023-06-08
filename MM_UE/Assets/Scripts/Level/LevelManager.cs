@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public static class LevelManager
 {
+
+
     public static string[] levelNames = new string[] {
         "Level1"
     };

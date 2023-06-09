@@ -92,7 +92,8 @@ public class Buoyancy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (sinkOnPlayerCollision && collision.gameObject.layer == LayerMask.NameToLayer("HumanPlayer"))
+        if (sinkOnPlayerCollision && (collision.gameObject.layer == LayerMask.NameToLayer("HumanPlayer")
+            || collision.gameObject.layer == LayerMask.NameToLayer("Decimate")))
         {
             sinking = true;
         }
@@ -100,11 +101,12 @@ public class Buoyancy : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (sinkOnPlayerCollision && collision.gameObject.layer == LayerMask.NameToLayer("HumanPlayer"))
+        Debug.Log("exitCollision");
+        if (sinkOnPlayerCollision && (collision.gameObject.layer == LayerMask.NameToLayer("HumanPlayer")
+            || collision.gameObject.layer == LayerMask.NameToLayer("Decimate")))
         {
             sinking = false;
-            floatingPower = initialFloatingPower / (floatIncreaseAmount * floatIncreaseSteps); // * Mathf.Pow(1/floatIncreaseAmount, floatIncreaseSteps);
-            Debug.Log("Set floatingPower to " + floatingPower + " from " + initialFloatingPower / (floatIncreaseAmount * floatIncreaseSteps));
+            floatingPower = initialFloatingPower / (floatIncreaseAmount * floatIncreaseSteps);
         }
     }
 }

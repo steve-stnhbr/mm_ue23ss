@@ -57,34 +57,43 @@ public class LevelWalls : MonoBehaviour
 
     private void createWallGameObjects()
     {
-        int wallExtent = (int)(Math.Max(levelWidth, Math.Max(levelHeight, levelDepth)) * 1.7);
+        int wallExtent = (int)(Math.Max(levelWidth, Math.Max(levelHeight, levelDepth)) * 4);
         // front wall
+        /*
         createPlaneForCorners(
             new Vector3(0, 0, 0),
             new Vector3(levelWidth, 0, 0),
             new Vector3(levelWidth, levelHeight, 0),
             new Vector3(0, levelHeight, 0)
         );
+        */
+
+        createPlaneForCorners(
+            new Vector3(-wallExtent, -wallExtent, 0),
+            new Vector3(wallExtent, -wallExtent, 0),
+            new Vector3(wallExtent, wallExtent, 0),
+            new Vector3(-wallExtent, wallExtent, 0)
+        );
         // back wall
         createPlaneForCorners(
-            new Vector3(0, 0, levelDepth),
-            new Vector3(0, levelHeight, levelDepth),
-            new Vector3(levelWidth, levelHeight, levelDepth),
-            new Vector3(levelWidth, 0, levelDepth)
+            new Vector3(-wallExtent, -wallExtent, levelDepth),
+            new Vector3(-wallExtent, wallExtent, levelDepth),
+            new Vector3(wallExtent, wallExtent, levelDepth),
+            new Vector3(wallExtent, -wallExtent, levelDepth)
         );
         // left wall
         createPlaneForCorners(
-            new Vector3(levelWidth, 0, 0),
-            new Vector3(levelWidth, 0, levelDepth),
-            new Vector3(levelWidth, levelHeight, levelDepth),
-            new Vector3(levelWidth, levelHeight, 0)
+            new Vector3(levelWidth, -wallExtent, -wallExtent),
+            new Vector3(levelWidth, -wallExtent, wallExtent),
+            new Vector3(levelWidth, wallExtent, wallExtent),
+            new Vector3(levelWidth, wallExtent, -wallExtent)
         );
         // right wall
         createPlaneForCorners(
-            new Vector3(0, levelHeight, 0),
-            new Vector3(0, levelHeight, levelDepth),
-            new Vector3(0, 0, levelDepth),
-            new Vector3(0, 0, 0)
+            new Vector3(0, -wallExtent, -wallExtent),
+            new Vector3(0, wallExtent, -wallExtent),
+            new Vector3(0, wallExtent, wallExtent),
+            new Vector3(0, -wallExtent, wallExtent)
         );
         // Ceiling
         createPlaneForCorners(
@@ -123,6 +132,7 @@ public class LevelWalls : MonoBehaviour
             new Vector3(wallExtent, -wallExtent, 0),
             "front_right"
         );
+
 
         // bound walls for left side
         createPlaneForCorners(

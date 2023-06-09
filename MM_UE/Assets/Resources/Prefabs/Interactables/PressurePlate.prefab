@@ -143,15 +143,15 @@ PrefabInstance:
     - target: {fileID: -6532055803787292656, guid: 1d52cc09bf98b8f41a2e429738bc8933, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: fc06cb3c2542f8f4898985ea180bff9d, type: 2}
+      objectReference: {fileID: 2100000, guid: 00c426ee65c695a49a72dbbcf1e97982, type: 2}
     - target: {fileID: -4897732323685117858, guid: 1d52cc09bf98b8f41a2e429738bc8933, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: fc06cb3c2542f8f4898985ea180bff9d, type: 2}
+      objectReference: {fileID: 2100000, guid: 00c426ee65c695a49a72dbbcf1e97982, type: 2}
     - target: {fileID: -1556511507372388876, guid: 1d52cc09bf98b8f41a2e429738bc8933, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: aed6f27cd81f56b4394c4633b04b80bc, type: 2}
+      objectReference: {fileID: 2100000, guid: f0fdb224a2689064e8c673bc7e97a16d, type: 2}
     - target: {fileID: 919132149155446097, guid: 1d52cc09bf98b8f41a2e429738bc8933, type: 3}
       propertyPath: m_Name
       value: Button
@@ -159,7 +159,7 @@ PrefabInstance:
     - target: {fileID: 3449313695959172214, guid: 1d52cc09bf98b8f41a2e429738bc8933, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 662b3b375e3e1644bbe47106ad95393d, type: 2}
+      objectReference: {fileID: 2100000, guid: 27994434a3d0f6f45a81e8321e28d7a4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d52cc09bf98b8f41a2e429738bc8933, type: 3}
 --- !u!1 &4686084991570324417 stripped

@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class HumanInteraction : MonoBehaviour, IDisableInputForMenu
 {
-    public float interactDelay = 0.2f;
+    [SerializeField] float interactDelay = 0.2f;
     float lastInteractTime = 0;
     bool inputForMenuDisabled = false;
+
+    [SerializeField] GameObject interactUI;
 
     private void OnTriggerStay(Collider other)
     {
@@ -28,7 +30,23 @@ public class HumanInteraction : MonoBehaviour, IDisableInputForMenu
         }
 
     }
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.GetComponent<IInteractable>() != null)
+        {
+            interactUI.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.GetComponent<IInteractable>() != null)
+        {
+            interactUI.SetActive(false);
+        }
+    }
+
     public void DisableInputForMenu()
     {
         inputForMenuDisabled = true;

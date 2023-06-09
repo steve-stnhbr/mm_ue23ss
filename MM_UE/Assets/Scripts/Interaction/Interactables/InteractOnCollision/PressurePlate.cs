@@ -17,6 +17,15 @@ public class PressurePlate : InteractableOnCollision
     [SerializeField]
     Animator animator;
 
+    [SerializeField] AudioClip activationSound;
+    [SerializeField] AudioClip deactivationSound;
+    AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     bool state = false;
 
     private void OnTriggerExit(Collider other)
@@ -40,7 +49,8 @@ public class PressurePlate : InteractableOnCollision
     void OnActivate()
     {
         animator.SetBool("Active", true);
-        if(objectToActivate != null)
+        audioSource.PlayOneShot(activationSound);
+        if (objectToActivate != null)
         {
             objectToActivate.Interact(EnumActor.Script);
         }
@@ -49,8 +59,10 @@ public class PressurePlate : InteractableOnCollision
     void OnDeactivate()
     {
         animator.SetBool("Active", false);
+        audioSource.PlayOneShot(deactivationSound);
         if (objectToActivate != null)
         {
+            
             objectToActivate.Interact(EnumActor.Script);
         }
     }

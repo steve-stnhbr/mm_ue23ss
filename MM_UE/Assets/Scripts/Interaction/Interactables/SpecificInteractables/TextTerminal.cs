@@ -11,6 +11,7 @@ public class TextTerminal : Switch
     [SerializeField] TextMeshPro inWorldText;
     [SerializeField] Interactable objectToActivate;
     [SerializeField] InputHandler inputHandler;
+    [SerializeField] AudioClip accessClip;
     [SerializeField] AudioClip processingClip;
     [SerializeField] AudioClip successClip;
     [SerializeField] AudioClip errorClip;
@@ -49,6 +50,7 @@ public class TextTerminal : Switch
         terminalUI.SetActive(true);
         terminalScript.setText(terminalText.ToUpper());
         inputHandler.DisableInputForInteraction();
+        audioSource.PlayOneShot(accessClip);
     }
 
     public void EnterPassword()

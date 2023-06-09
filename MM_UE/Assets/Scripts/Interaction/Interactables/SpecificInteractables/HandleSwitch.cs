@@ -6,8 +6,14 @@ public class HandleSwitch : Switch
 {
     [Tooltip("When set, the object gets activated")]
     public Interactable objectToActivate;
-    [SerializeField]
-    Animator animator;
+    [SerializeField] Animator animator;
+    [SerializeField] AudioClip activationSound;
+    AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     protected override void DoWhileOffFixed()
     {
@@ -21,6 +27,7 @@ public class HandleSwitch : Switch
     protected override void SwitchOff(EnumActor actor)
     {
         animator.SetBool("Active", false);
+        audioSource.PlayOneShot(activationSound, 0.8f);
         if (objectToActivate != null)
         {
             objectToActivate.Interact(EnumActor.Script);
@@ -30,6 +37,7 @@ public class HandleSwitch : Switch
     protected override void SwitchOn(EnumActor actor)
     {
         animator.SetBool("Active", true);
+        audioSource.PlayOneShot(activationSound, 0.8f);
         if (objectToActivate != null)
         {
             objectToActivate.Interact(EnumActor.Script);

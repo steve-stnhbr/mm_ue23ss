@@ -144,7 +144,7 @@ Material:
     - _StencilWriteMaskDepth: 8
     - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 14
-    - _StencilWriteMaskMV: 42
+    - _StencilWriteMaskMV: 40
     - _SupportDecals: 1
     - _SurfaceType: 0
     - _TransparentBackfaceEnable: 0
@@ -164,7 +164,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _PortalColor: {r: 0.5598835, g: 1.2017012, b: 1.9800757, a: 0}
+    - _PortalColor: {r: 0.5568628, g: 0.95686275, b: 1.6078432, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &1687751075547476196
 MonoBehaviour:

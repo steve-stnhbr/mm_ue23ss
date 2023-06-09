@@ -100,11 +100,11 @@ Material:
     m_Ints: []
     m_Floats:
     - Vector1_1C8FEA19: 1.09
-    - Vector1_50C74F87: 0.28
-    - Vector1_5DE38BA8: 0.41
+    - Vector1_50C74F87: 0
+    - Vector1_5DE38BA8: 0.46
     - Vector1_712C90A3: 3.67
-    - Vector1_C8CD7BB7: 0.15
-    - Vector1_EBF894A3: 1.07
+    - Vector1_C8CD7BB7: 0.11
+    - Vector1_EBF894A3: 0.38
     - Vector1_F8D9205E: 0
     - _AlphaClip: 0
     - _Blend: 0

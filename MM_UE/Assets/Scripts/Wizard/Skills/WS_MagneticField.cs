@@ -22,7 +22,6 @@ public class WS_MagneticField : WizardSkill
 
     public override void OnExecute(GameObject wizard)
     {
-        //GetComponent<Animation>().Play();
         GetComponent<Animator>().SetBool("Magnetizes", true);
         /* 
         legacy code for instant push aways
@@ -30,18 +29,7 @@ public class WS_MagneticField : WizardSkill
         
         foreach (MagneticBehaviour magnetic in magneticBehaviours)
         {
-            Vector3 difference = magnetic.gameObject.transform.position - transform.position;
-            if (difference.magnitude > effectDistance)
-            {
-                continue;
-            }
-
-            // interpolation function
-            float magnitude = difference.sqrMagnitude;
-            Vector3 force = difference.normalized * magnetic.magneticStrength * magnitude;
-
-            magnetic.gameObject.GetComponent<Rigidbody>().AddForce(force, ForceMode.Force);
-
+            PropellMagnetically(magnetic);
         }
         */
     }
@@ -51,17 +39,23 @@ public class WS_MagneticField : WizardSkill
         MagneticBehaviour magnetic;
         if (other.TryGetComponent(out magnetic))
         {
-            Vector3 difference = magnetic.gameObject.transform.position - transform.position;
-            if (difference.magnitude > effectDistance)
-            {
-                return;
-            }
-
-            // interpolation function
-            float magnitude = difference.sqrMagnitude;
-            Vector3 force = difference.normalized * magnetic.magneticStrength * magnitude;
-
-            magnetic.gameObject.GetComponent<Rigidbody>().AddForce(force, ForceMode.Force);
+            PropellMagnetically(magnetic);
         }
+    }
+
+    private void PropellMagnetically(MagneticBehaviour magnetic)
+    {
+
+        Vector3 difference = magnetic.gameObject.transform.position - transform.position;
+        if (difference.magnitude > effectDistance)
+        {
+            return;
+        }
+
+        // interpolation function
+        float magnitude = difference.sqrMagnitude;
+        Vector3 force = difference.normalized * magnetic.magneticStrength * magnitude;
+
+        magnetic.gameObject.GetComponent<Rigidbody>().AddForce(force, ForceMode.Force);
     }
 }

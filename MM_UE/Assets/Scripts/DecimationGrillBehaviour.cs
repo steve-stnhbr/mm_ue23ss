@@ -6,6 +6,7 @@ public class DecimationGrillBehaviour : MonoBehaviour
 {
     public float decimationSpeed;
     public float initialCutoff;
+    public short framesToDestroy;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,6 @@ public class DecimationGrillBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,6 +35,7 @@ public class DecimationGrillBehaviour : MonoBehaviour
             DecimationBehaviour decimation = gameObject.GetComponentInChildren<DecimationBehaviour>();
             if (decimation && !decimation.decimated)
             {
+                decimation.framesToDestroy = framesToDestroy;
                 decimation.decimationSpeed = decimationSpeed;
                 decimation.cutoff = initialCutoff;
                 decimation.decimated = true;

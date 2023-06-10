@@ -10,6 +10,10 @@ public class DecimationBehaviour : MonoBehaviour
     public float cutoff;
     [System.NonSerialized]
     public bool decimated;
+    [System.NonSerialized]
+    public short framesToDestroy;
+
+    bool toDestroy;
 
 
     // Start is called before the first frame update
@@ -29,7 +33,18 @@ public class DecimationBehaviour : MonoBehaviour
             cutoff -= (Time.deltaTime) * decimationSpeed;
             if (cutoff < -2)
             {
-                Debug.Log("Destroying");
+                toDestroy = true;
+            }
+        }
+        if (toDestroy)
+        {
+            transform.position = new Vector3(-100, -100, -100);
+            GetComponent<BoxCollider>().size = Vector3.zero;
+            Debug.Log("Planning to destroy " + Time.time);
+            framesToDestroy--;
+            if (framesToDestroy < 0)
+            {
+                Debug.Log("Destroying " + Time.time);
                 Destroy(gameObject);
             }
         }

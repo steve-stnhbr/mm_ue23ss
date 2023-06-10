@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 4
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -25071,6 +25071,7 @@ MonoBehaviour:
   UISpriteSelected: {fileID: 21300000, guid: d0ae86e1568afcf49891d707a54f53d6, type: 3}
   UIColor: {r: 0.2210751, g: 0.4973001, b: 0.5660378, a: 1}
   prefab: {fileID: 7819710796523589834, guid: 743fca7512c529f4e89ede202ef1ffc5, type: 3}
+  cooldown: 0
 --- !u!114 &928877266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25083,15 +25084,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5abe13c3ce0bcf34797f3b1a2f08365a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UISprite: {fileID: 21300000, guid: ddf2e76e8a1f88f46ae1e42277850b48, type: 3}
-  UISpriteSelected: {fileID: 21300000, guid: f09eae8c0ea04254b90c5386a034a225, type: 3}
-  UIColor: {r: 0, g: 0, b: 0, a: 0}
-  boxPrefab: {fileID: 0}
 --- !u!4 &928877273 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1776457117238904730, guid: d98426e99ed416646821204d42141bb8, type: 3}
   m_PrefabInstance: {fileID: 375072139}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &928877280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928877250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e54c7f609978f43a43ebae0c366658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UISprite: {fileID: 21300000, guid: 02800fb9cff14da47a04572790384d8b, type: 3}
+  UISpriteSelected: {fileID: 21300000, guid: 65f0e363b74cf5845ab8c3fbc14f39ac, type: 3}
+  UIColor: {r: 0.35740763, g: 0.16035953, b: 0.7264151, a: 0}
+  effectDistance: 7
 --- !u!4 &933660408 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8584592782064796817, guid: a6b1ae1d791a1c44a98e3e35b553ffc8, type: 3}

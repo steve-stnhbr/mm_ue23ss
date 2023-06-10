@@ -5,6 +5,9 @@ using UnityEngine;
 public class WS_CreateCylinder : WizardSkill
 {
     public GameObject prefab;
+    public float cooldown;
+
+    float currentCooldown;
 
     public override string skillName
     {
@@ -12,7 +15,18 @@ public class WS_CreateCylinder : WizardSkill
     }
     public override void OnExecute(GameObject wizard)
     {
-        GameObject instance = GameObject.Instantiate(prefab);
-        instance.transform.position = LevelManager.getCurrentLevel().worldPositionToLevelPosition(wizard.transform.position);
+        if (cooldown <= 0) { 
+            GameObject instance = GameObject.Instantiate(prefab);
+            instance.transform.position = LevelManager.getCurrentLevel().worldPositionToLevelPosition(wizard.transform.position);
+            currentCooldown = cooldown;
+        }
+    }
+
+    private void Update()
+    {
+        if (cooldown > 0)
+        {
+            cooldown -= Time.deltaTime;
+        }
     }
 }

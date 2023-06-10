@@ -38,16 +38,13 @@ public class LevelWalls : MonoBehaviour
             }
             Vector3 wallCenter = obj.GetComponent<MeshFilter>().mesh.bounds.center - levelSize / 2;
             Vector3 cameraCenter = cam.transform.position - levelSize / 2;
-            Debug.Log(wallCenter + ":" + cameraCenter);
             if (Math.Sign(wallCenter.x) == Math.Sign(cameraCenter.x) 
                 && Math.Sign(wallCenter.z) == Math.Sign(cameraCenter.z))
             {
-                Debug.Log("Deactivate " + obj.name);
                 obj.GetComponent<Renderer>().forceRenderingOff = true;
                 obj.SetActive(false);
             } else
             {
-                //Debug.Log("activate " + obj.name);
                 obj.GetComponent<Renderer>().forceRenderingOff = false;
                 obj.SetActive(true);
             }

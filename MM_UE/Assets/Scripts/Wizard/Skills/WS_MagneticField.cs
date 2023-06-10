@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class WS_MagneticField : WizardSkill
 {
+    public float cooldown;
     public float effectDistance = 7;
     public override string skillName => "MagneticField";
 
     bool magnetizes;
+    float currentCooldown;
 
     // Start is called before the first frame update
     void Start()
@@ -18,11 +20,19 @@ public class WS_MagneticField : WizardSkill
     // Update is called once per frame
     void Update()
     {
+        if (currentCooldown >= 0)
+        {
+            currentCooldown -= Time.deltaTime;
+        }
     }
 
     public override void OnExecute(GameObject wizard)
     {
-        GetComponent<Animator>().SetBool("Magnetizes", true);
+        if (currentCooldown < 0)
+        {
+            GetComponent<Animator>().SetBool("Magnetizes", true);
+            currentCooldown = cooldown;
+        }
         /* 
         legacy code for instant push aways
         MagneticBehaviour[] magneticBehaviours = Object.FindObjectsByType<MagneticBehaviour>(FindObjectsSortMode.None);

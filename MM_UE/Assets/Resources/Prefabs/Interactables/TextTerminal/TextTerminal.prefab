@@ -123,6 +123,7 @@ MonoBehaviour:
   inWorldText: {fileID: 3477792829751522575}
   objectToActivate: {fileID: 0}
   inputHandler: {fileID: 0}
+  accessClip: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
   processingClip: {fileID: 8300000, guid: 89e6bc608da7b47d4914f3d9c2484e48, type: 3}
   successClip: {fileID: 8300000, guid: 7bd6b897eb5ca4b7d88a205c4a51640c, type: 3}
   errorClip: {fileID: 8300000, guid: 5039414d94a6e4e70a5ab9e8833e992a, type: 3}

@@ -7,7 +7,13 @@ public class ButtonResetable : ResetableInteractable
 {
     [SerializeField] Animator animator;
     public Interactable objectToActivate;
+    [SerializeField] AudioClip activationSound;
+    AudioSource audioSource;
 
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     protected override void DoWhileOffFixed()
     {
@@ -32,8 +38,8 @@ public class ButtonResetable : ResetableInteractable
     protected override void TurnOn(EnumActor actor)
     {
         animator.SetBool("Active", true);
-
-        if(objectToActivate != null)
+        audioSource.PlayOneShot(activationSound);
+        if (objectToActivate != null)
         {
             objectToActivate.Interact(EnumActor.Script);
         }

@@ -7,6 +7,12 @@ public class GoalActivatorSwitch : Switch
     [SerializeField] Animator animator;
     [SerializeField] GameObject LevelEndObject;
 
+    new public bool state
+    {
+        get { return state; }
+        set { state = value; GetComponent<Animator>().SetBool("Active", true); }
+    }
+
     protected override void DoWhileOffFixed()
     {
     }

@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SphereActivatorBehaviour : MonoBehaviour
+public class SphereActivatorBehaviour : Switch
 {
+    public Interactable objectToActivate;
     Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -23,11 +24,34 @@ public class SphereActivatorBehaviour : MonoBehaviour
         float distance = Vector3.Distance(collision.gameObject.transform.position, GetComponent<Collider>().bounds.center);
         if (collision.gameObject.TryGetComponent(out activation) && distance < .8)
         {
-            animator.SetBool("Active", true);
+            if (!this.state)
+            {
+                this.Activate(EnumActor.Object);
+            }
         } 
         else
         {
-            animator.SetBool("Active", false);
+            //this.Activate(EnumActor.Object);
         }
+    }
+
+    protected override void SwitchOn(EnumActor actor)
+    {
+        animator.SetBool("Active", true);
+        objectToActivate.Interact(EnumActor.Object);
+    }
+
+    protected override void DoWhileOnFixed()
+    {
+    }
+
+    protected override void SwitchOff(EnumActor actor)
+    {
+        animator.SetBool("Active", false);
+        objectToActivate.Interact(EnumActor.Object);
+    }
+
+    protected override void DoWhileOffFixed()
+    {
     }
 }

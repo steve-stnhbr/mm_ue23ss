@@ -33,6 +33,8 @@ public abstract class Level : MonoBehaviour
     [Tooltip("A prefab for the walls created around the Levels bounds")]
     public GameObject wallPrefab;
 
+    public GameMenu gameMenu;
+
     public string sceneName;
 
     Vector3 levelSize;
@@ -47,7 +49,10 @@ public abstract class Level : MonoBehaviour
     {
     }
 
-    public abstract void Stop();
+    public void Stop()
+    {
+        gameMenu.loadLevel(LevelManager.currentIndex + 1);
+    }
 
     public Vector3 getLevelSize()
     {

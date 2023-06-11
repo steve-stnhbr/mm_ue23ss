@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class WaterLevel : Level
 {
-    public override void Stop()
-    {
 
-    }
 }

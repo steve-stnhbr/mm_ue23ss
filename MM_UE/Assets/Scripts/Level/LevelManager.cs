@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 public static class LevelManager
 {
     public static string[] levelNames = new string[] {
-        "Level1"
+        "CubeIntroLevel",
+        "MagnetIntroLevel",
+        "WaterLevel"
     };
 
     public static int currentIndex = 0;

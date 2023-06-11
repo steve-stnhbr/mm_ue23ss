@@ -15,7 +15,7 @@ public class WS_CreateCylinder : WizardSkill
     }
     public override void OnExecute(GameObject wizard)
     {
-        if (cooldown <= 0) { 
+        if (currentCooldown <= 0) { 
             GameObject instance = GameObject.Instantiate(prefab);
             instance.transform.position = LevelManager.getCurrentLevel().worldPositionToLevelPosition(wizard.transform.position);
             currentCooldown = cooldown;
@@ -24,9 +24,9 @@ public class WS_CreateCylinder : WizardSkill
 
     private void Update()
     {
-        if (cooldown > 0)
+        if (currentCooldown > 0)
         {
-            cooldown -= Time.deltaTime;
+            currentCooldown -= Time.deltaTime;
         }
     }
 }

@@ -127,6 +127,7 @@ public class GameMenu : MonoBehaviour
 
     IEnumerator loadLevelASync(string levelToLoad)
     {
+        Debug.Log("Loading level " + levelToLoad);
         loadingScreenScript.updateLevelTitle(levelToLoad);
         AsyncOperation loadOperation = SceneManager.LoadSceneAsync(levelToLoad);
 

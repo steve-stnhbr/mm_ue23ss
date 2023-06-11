@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.3369, g: 325.0498, b: 430.21924, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15443,14 +15443,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819639357}
-  m_LocalRotation: {x: 0.5878177, y: -0.20537618, z: 0.15750526, w: 0.7664745}
+  m_LocalRotation: {x: 0.8697145, y: -0.11260543, z: 0.23303925, w: 0.42024928}
   m_LocalPosition: {x: 10.85, y: 7.78, z: 7.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 74.97, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 128.42, y: -30, z: 0}
 --- !u!114 &1819639360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18336,6 +18336,10 @@ PrefabInstance:
       propertyPath: isWizardInteractable
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2333623568055463400, guid: 3cc06a5bc54db414495665e0fcee6ab9, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 660407ee8a6083241a9e3c058c52107f, type: 2}
     - target: {fileID: 2875560697688852993, guid: 3cc06a5bc54db414495665e0fcee6ab9, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -46872,11 +46876,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9020366258260469988, guid: 4f6737016f2a18741b1ebe58fd2856ca, type: 3}
       propertyPath: m_Drag
-      value: 0.51
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9020366258260469988, guid: 4f6737016f2a18741b1ebe58fd2856ca, type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9020366258260469988, guid: 4f6737016f2a18741b1ebe58fd2856ca, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9020366258260469990, guid: 4f6737016f2a18741b1ebe58fd2856ca, type: 3}
       propertyPath: MinDistance

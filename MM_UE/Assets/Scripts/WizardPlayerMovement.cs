@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WizardPlayerMovement: MonoBehaviour
+public class WizardPlayerMovement: MonoBehaviour, IDisableInputForMenu, IDisableInputForInteraction
 {
     public float maxDistance = 30;
     public LayerMask layerMask;
@@ -19,6 +19,9 @@ public class WizardPlayerMovement: MonoBehaviour
 
     Rigidbody rigidbody;
 
+    bool inputDisabledForMenu = false;
+    bool inputDisabledForInteraction = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,11 @@ public class WizardPlayerMovement: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (inputDisabledForInteraction || inputDisabledForMenu)
+        {
+            return;
+        }
+
         Vector3 position = Input.mousePosition;
         // offset, to make the tracker visible
         position.z = cameraOffset;
@@ -69,5 +77,25 @@ public class WizardPlayerMovement: MonoBehaviour
         {
             rigidbody.transform.rotation = Quaternion.Slerp(rigidbody.transform.rotation, Quaternion.LookRotation(rigidbody.velocity), Time.deltaTime * 40f);
         }
+    }
+
+    public void DisableInputForMenu()
+    {
+        inputDisabledForMenu = true;
+    }
+
+    public void EnableInputForMenu()
+    {
+        inputDisabledForMenu = false;
+    }
+
+    public void DisableInputForInteraction()
+    {
+        inputDisabledForInteraction = true;
+    }
+
+    public void EnableInputForInteraction()
+    {
+        inputDisabledForInteraction = false;
     }
 }

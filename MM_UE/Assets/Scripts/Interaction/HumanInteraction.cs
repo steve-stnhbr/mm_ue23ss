@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HumanInteraction : MonoBehaviour
+public class HumanInteraction : MonoBehaviour, IDisableInputForMenu
 {
     public float interactDelay = 0.2f;
     float lastInteractTime = 0;
+    bool inputForMenuDisabled = false;
 
     private void OnTriggerStay(Collider other)
     {
-        if (Time.time-lastInteractTime>interactDelay && Input.GetAxis("HumanInteract") > 0.5f)
+        if (Time.time-lastInteractTime>interactDelay && Input.GetAxis("HumanInteract") > 0.5f && !inputForMenuDisabled)
         {
             GetComponent<Animator>().SetBool("Interacts", true);
 
@@ -26,6 +27,16 @@ public class HumanInteraction : MonoBehaviour
             otherScriptOnCollision.Collide(EnumActor.Human);
         }
 
+    }
+    
+    public void DisableInputForMenu()
+    {
+        inputForMenuDisabled = true;
+    }
+
+    public void EnableInputForMenu()
+    {
+        inputForMenuDisabled = false;
     }
 
 }

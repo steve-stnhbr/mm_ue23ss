@@ -2,7 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Camera))]
 
-public class CameraController : MonoBehaviour
+public class CameraController : MonoBehaviour, IDisableInputForMenu, IDisableInputForInteraction
 {
     [Tooltip("This value describes how fast the Camera turns per second")]
     public float yawSpeedPerSecond = 120f;
@@ -18,7 +18,9 @@ public class CameraController : MonoBehaviour
     public Transform focusOne;
     [Tooltip("The transform of the second focus, if set, the camera orbits around the middle of both foci")]
     public Transform focusTwo;
-    
+
+    bool inputDisabledForMenu = false;
+    bool inputDisabledForInteraction = false;
 
     Camera camera;
 
@@ -30,6 +32,11 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
+        if (inputDisabledForInteraction || inputDisabledForMenu)
+        {
+            return;
+        }
+
         if (focusOne!=null)
         {
             handleFocus();
@@ -59,6 +66,26 @@ public class CameraController : MonoBehaviour
         transform.position += focusDifference;
 
 
+    }
+
+    public void DisableInputForMenu()
+    {
+        inputDisabledForMenu = true;
+    }
+
+    public void EnableInputForMenu()
+    {
+        inputDisabledForMenu = false;
+    }
+
+    public void DisableInputForInteraction()
+    {
+        inputDisabledForInteraction = true;
+    }
+
+    public void EnableInputForInteraction()
+    {
+        inputDisabledForInteraction = false;
     }
 
 }

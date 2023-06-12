@@ -64,7 +64,7 @@ public class WS_MagneticField : WizardSkill
 
         // interpolation function
         float magnitude = difference.sqrMagnitude;
-        Vector3 force = difference.normalized * magnetic.magneticStrength * magnitude;
+        Vector3 force = difference.normalized * magnetic.magneticStrength;
 
         magnetic.gameObject.GetComponent<Rigidbody>().AddForce(force, ForceMode.Force);
     }

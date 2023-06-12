@@ -29,7 +29,9 @@ public class MagneticSphereBehaviour : MonoBehaviour
 
     public void OnCollisionStay(Collision collision)
     {
-        float velocity = GetComponent<Rigidbody>().velocity.magnitude;
+        Vector3 velocityVec = GetComponent<Rigidbody>().velocity;
+        float velocity = new Vector2(velocityVec.x, velocityVec.z).magnitude;
+
         rolling.volume = Mathf.Clamp(CalculateVolume(velocity), 0f, .8f);
         if (velocity > .5f)
         {
@@ -44,6 +46,11 @@ public class MagneticSphereBehaviour : MonoBehaviour
 
     float CalculateVolume(float value)
     {
-        return Mathf.Exp(Mathf.Pow(value / 2.8f, 2)) - 1;
+        return Mathf.Exp(Mathf.Pow(value / 4f, 2)) - 1;
+    }
+
+    private void OnDestroy()
+    {
+        rolling.loop = false;
     }
 }

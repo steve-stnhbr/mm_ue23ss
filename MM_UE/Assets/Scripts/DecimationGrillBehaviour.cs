@@ -8,6 +8,8 @@ public class DecimationGrillBehaviour : MonoBehaviour
     public float initialCutoff;
     public short framesToDestroy;
 
+    public AudioClip destructionSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,11 @@ public class DecimationGrillBehaviour : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         decimate(other.gameObject);
+        AudioSource audioSource;
+        if (TryGetComponent(out audioSource))
+        {
+            audioSource.PlayOneShot(destructionSound);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

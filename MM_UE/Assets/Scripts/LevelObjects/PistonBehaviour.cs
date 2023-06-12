@@ -11,8 +11,6 @@ public class PistonBehaviour : Switch
     Vector3[] relativePositions;
     Vector3 positionBefore;
 
-    List<GameObject> collided;
-
     Animator animator;
 
     protected override void DoWhileOffFixed()
@@ -38,7 +36,6 @@ public class PistonBehaviour : Switch
     // Start is called before the first frame update
     void Start()
     {
-        collided = new List<GameObject>();
         animator = GetComponentInParent<Animator>();
         relativePositions = new Vector3[relativeGameObjects.Length];
         for (int i = 0; i < relativeGameObjects.Length; i++)
@@ -48,30 +45,16 @@ public class PistonBehaviour : Switch
     }
 
     // Update is called once per frame
-    void Update()
+    new void FixedUpdate()
     {
+        base.FixedUpdate();
         if (transform.position != positionBefore)
         {
             for (int i = 0; i < relativeGameObjects.Length; i++)
             {
                 relativeGameObjects[i].transform.position = relativePositions[i] + transform.position;
             }
-
-            foreach (GameObject gameObject in collided)
-            {
-                gameObject.transform.position += transform.position - positionBefore;
-            }
         }
         positionBefore = transform.position;
-    }
-
-    public void OnCollisionEnter(Collision collision)
-    {
-        collided.Add(collision.gameObject);
-    }
-
-    public void OnCollisionExit(Collision collision)
-    {
-        collided.Remove(collision.gameObject);
     }
 }

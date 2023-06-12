@@ -8,13 +8,15 @@ public class WS_MagneticField : WizardSkill
     public float effectDistance = 7;
     public override string skillName => "MagneticField";
 
+    public GameObject magnetForceRender;
+
     bool magnetizes;
     float currentCooldown;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        magnetForceRender.transform.localScale = Vector3.one * (effectDistance / 10f);
     }
 
     // Update is called once per frame

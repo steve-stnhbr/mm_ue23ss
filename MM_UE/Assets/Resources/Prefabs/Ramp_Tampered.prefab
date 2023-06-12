@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5096661395296233942}
   - component: {fileID: 8148455506568750707}
   - component: {fileID: 6265024219542442681}
-  - component: {fileID: 1669372037331340623}
   m_Layer: 0
   m_Name: Ramp_Tampered
   m_TagString: Untagged
@@ -85,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1669372037331340623
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5616316551891546988}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -462981019419857548, guid: 58734158500b6ed4abb9aa287a9e4be0, type: 3}
 --- !u!1001 &8375367803670450012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -173,7 +158,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8717316817087394317}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: c9b67b54827aa824bbc928821ee03946, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4

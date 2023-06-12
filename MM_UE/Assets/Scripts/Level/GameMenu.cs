@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -22,6 +23,9 @@ public class GameMenu : MonoBehaviour, IDisableInputForInteraction
     [Tooltip("Object reference of a GameObject with the HUD")]
     [SerializeField] GameObject hud;
     HUD hudScript;
+    [Tooltip("Object reference of a GameObject with the GameOverUI")]
+    [SerializeField] GameObject gameOverUI;
+    GameOverUI gameOVerScript;
     [Tooltip("Script reference the Input Handler")]
     [SerializeField] InputHandler inputHandler;
 
@@ -31,6 +35,7 @@ public class GameMenu : MonoBehaviour, IDisableInputForInteraction
     [Tooltip("if true the menu starts with the main menu and doesnt allow pausing, if false it doesnt show ui and allows pausing")]
     [SerializeField] bool isStartMenu = false;
 
+    bool isGameOver = false;
     float lastPauseToggle = 0;
 
     private void OnEnable()
@@ -67,6 +72,10 @@ public class GameMenu : MonoBehaviour, IDisableInputForInteraction
 
     public void togglePauseMenu()
     {
+        if (isGameOver)
+        {
+            return;
+        }
         lastPauseToggle = Time.time;
         bool wasPauseActive = pauseUI.active;
         closeMenus();
@@ -109,10 +118,29 @@ public class GameMenu : MonoBehaviour, IDisableInputForInteraction
         }
         else
         {
+            if (isGameOver)
+            {
+                gameOverUI.SetActive(true);
+                inputHandler.DisableInputForMenu();
+                return;
+            } 
             pauseUI.SetActive(true);
             inputHandler.DisableInputForMenu();
         }
         
+    }
+
+    public void openGameOverMenu()
+    {
+        if (isGameOver)
+        {
+            return;
+        }
+        isGameOver = true;
+        closeMenus();
+        gameOverUI.SetActive(true);
+        inputHandler.DisableInputForMenu();
+
     }
 
     public void loadNextLevel()
@@ -191,6 +219,7 @@ public class GameMenu : MonoBehaviour, IDisableInputForInteraction
         levelSelectUI.SetActive(false);
         pauseUI.SetActive(false);
         hud.SetActive(false);
+        gameOverUI.SetActive(false);
     }
 
     public void DisableInputForInteraction()

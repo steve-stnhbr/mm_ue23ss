@@ -462,7 +462,7 @@ GameObject:
   - component: {fileID: 7136305138500219653}
   - component: {fileID: 64476708673023042}
   m_Layer: 0
-  m_Name: HandSwitch
+  m_Name: RobotTerminal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -535,8 +535,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede81b1ec391aa94e89a7170cbaf6097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHumanInteractable: 1
-  isWizardInteractable: 0
+  isHumanInteractable: 0
+  isWizardInteractable: 1
   isObjectInteractable: 0
   triggerCollider: {fileID: -3044941716673213264}
   state: 0

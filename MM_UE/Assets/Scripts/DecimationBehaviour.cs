@@ -39,7 +39,6 @@ public class DecimationBehaviour : MonoBehaviour
         if (toDestroy)
         {
             transform.position = new Vector3(-100, -100, -100);
-            GetComponent<BoxCollider>().size = Vector3.zero;
             Debug.Log("Planning to destroy " + Time.time);
             framesToDestroy--;
             if (framesToDestroy < 0)

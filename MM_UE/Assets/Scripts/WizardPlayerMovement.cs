@@ -19,6 +19,8 @@ public class WizardPlayerMovement: MonoBehaviour, IDisableInputForMenu, IDisable
 
     Rigidbody rigidbody;
 
+    AudioSource audioSource;
+
     bool inputDisabledForMenu = false;
     bool inputDisabledForInteraction = false;
 
@@ -26,6 +28,7 @@ public class WizardPlayerMovement: MonoBehaviour, IDisableInputForMenu, IDisable
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -51,7 +54,11 @@ public class WizardPlayerMovement: MonoBehaviour, IDisableInputForMenu, IDisable
         
         ParticleSystem ps = GetComponentInChildren<ParticleSystem>();
         ParticleSystem.EmissionModule emission = ps.emission;
-        emission.enabled = rigidbody.velocity.magnitude > turbineInactiveSpeed;
+        if (rigidbody.velocity.magnitude > turbineInactiveSpeed)
+        {
+            emission.enabled = true;
+            audioSource.volume = rigidbody.velocity.magnitude * .02f;
+        }
     }
 
     void FixedUpdate()

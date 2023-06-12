@@ -272,7 +272,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -2550,7 +2550,7 @@ ParticleSystem:
     randomizePerFrame: 1
   ExternalForcesModule:
     serializedVersion: 2
-    enabled: 0
+    enabled: 1
     multiplierCurve:
       serializedVersion: 2
       minMaxState: 0
@@ -5053,6 +5053,7 @@ Transform:
   m_Children:
   - {fileID: 6823562156266121710}
   - {fileID: 4030371882199578258}
+  - {fileID: 8960512212871590034}
   - {fileID: 3943558161433277999}
   - {fileID: 3778400597166250426}
   m_Father: {fileID: 0}
@@ -5120,15 +5121,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e01f3eece21268646bae4624b7c81b67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 30
+  maxDistance: 100
   layerMask:
     serializedVersion: 2
     m_Bits: 776
   cameraOffset: 3
-  maxSpeed: 10.14
-  mouseGravitation: 1
+  maxSpeed: 30
+  mouseGravitation: 2
   maxDistanceToMouse: 0.2
-  turbineInactiveSpeed: 0
+  turbineInactiveSpeed: 0.2
+  moveTrail: {fileID: 3326096493573814505}
 --- !u!135 &1776457117238904728
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5626,7 +5628,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3756031902119923820}
   m_LocalRotation: {x: 0.3292378, y: 0.19008555, z: 0.8010009, w: 0.46245813}
-  m_LocalPosition: {x: 2.402356, y: 0.034881506, z: 0.11638928}
+  m_LocalPosition: {x: 2.503, y: -0.044, z: -0.028}
   m_LocalScale: {x: 43.60467, y: 43.604675, z: 43.604675}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5893,7 +5895,7 @@ Transform:
   - {fileID: 2584022129170096247}
   - {fileID: 7649764341985278492}
   m_Father: {fileID: 1776457117238904730}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5430320670472886528
 GameObject:
@@ -5956,7 +5958,7 @@ Transform:
   m_Children:
   - {fileID: 2753617032743746256}
   m_Father: {fileID: 1776457117238904730}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6600403790934736694
 GameObject:
@@ -6456,6 +6458,68 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &8168002794771006672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8960512212871590034}
+  - component: {fileID: 2680146661726908184}
+  - component: {fileID: 9018914231787765026}
+  m_Layer: 7
+  m_Name: Interact System
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8960512212871590034
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8168002794771006672}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1776457117238904730}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2680146661726908184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8168002794771006672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d972b7844c532438f5d4e81ebf0157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactDelay: 0.2
+  interactPrompt: {fileID: 3344683828273483734, guid: 529d1dbb8bc403849a18ba012629e5d7, type: 3}
+  promptHeight: 1
+--- !u!136 &9018914231787765026
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8168002794771006672}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 10
+  m_Direction: 1
+  m_Center: {x: 0, y: -3, z: 0}
 --- !u!1 &9051493042499740073
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,6 +21,7 @@ public class WizardPlayerMovement: MonoBehaviour, IDisableInputForMenu, IDisable
 
     AudioSource audioSource;
 
+    Vector3 lastMovePos;
     bool inputDisabledForMenu = false;
     bool inputDisabledForInteraction = false;
 
@@ -49,7 +50,12 @@ public class WizardPlayerMovement: MonoBehaviour, IDisableInputForMenu, IDisable
         Ray ray = new Ray(levelPos, levelPos - Camera.main.ScreenToWorldPoint(new Vector3(0,0,0)));
         if (Physics.Raycast(ray, out raycastHit, maxDistance, layerMask))
         {
+            lastMovePos = LevelManager.getCurrentLevel().worldPositionToLevelPosition(raycastHit.point);
             moveTo(LevelManager.getCurrentLevel().worldPositionToLevelPosition(raycastHit.point));
+        }
+        else
+        {
+            moveTo(lastMovePos);
         }
         
         ParticleSystem ps = GetComponentInChildren<ParticleSystem>();
@@ -57,7 +63,11 @@ public class WizardPlayerMovement: MonoBehaviour, IDisableInputForMenu, IDisable
         if (rigidbody.velocity.magnitude > turbineInactiveSpeed)
         {
             emission.enabled = true;
+            emission.rateOverTime = rigidbody.velocity.magnitude * 100;
             audioSource.volume = rigidbody.velocity.magnitude * .02f;
+        } else
+        {
+            emission.enabled = false;
         }
     }
 

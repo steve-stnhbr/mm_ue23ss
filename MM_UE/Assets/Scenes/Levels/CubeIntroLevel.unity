@@ -1984,6 +1984,10 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 1105263804}
+    - target: {fileID: 98356972623023222, guid: 6ac0b0007131bc742b0ccdc681afaac0, type: 3}
+      propertyPath: footstepSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 897d97530242df642a838d861229657d, type: 3}
     - target: {fileID: 739230869707406238, guid: 6ac0b0007131bc742b0ccdc681afaac0, type: 3}
       propertyPath: m_RootOrder
       value: 3

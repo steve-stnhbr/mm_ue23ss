@@ -115,6 +115,21 @@ public class GameMenu : MonoBehaviour, IDisableInputForInteraction
         
     }
 
+    public void loadNextLevel()
+    {
+        string currentLevelName = SceneManager.GetActiveScene().name;
+        string[] levels = LevelManager.levelNames;
+        for (int i = 0; i < levels.Length; i++)
+        {
+            if (levels[i].Equals(currentLevelName))
+            {
+                loadLevel(LevelManager.levelNames[i+1]);
+                return;
+            }
+        }
+        Debug.Log("Next level for '" + currentLevelName + "' not found");
+    }
+
     public void openLevelSelector()
     {
         closeMenus();
@@ -146,7 +161,19 @@ public class GameMenu : MonoBehaviour, IDisableInputForInteraction
     IEnumerator loadLevelASync(string levelToLoad)
     {
         Debug.Log("Loading level " + levelToLoad);
-        loadingScreenScript.updateLevelTitle(levelToLoad);
+        
+        string[] levels = LevelManager.levelNames;
+        string loadingScreenLevelName = "";
+        for(int i = 0; i<levels.Length; i++)
+        {
+            if (levels[i].Equals(levelToLoad))
+            {
+                loadingScreenLevelName = LevelManager.levelLoadingNames[i];
+                break;
+            }
+        }
+        loadingScreenScript.updateLevelTitle(loadingScreenLevelName);
+
         AsyncOperation loadOperation = SceneManager.LoadSceneAsync(levelToLoad);
 
         while (!loadOperation.isDone)

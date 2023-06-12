@@ -554,7 +554,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.4}
   m_Center: {x: 0, y: 0, z: -0.2}
 --- !u!114 &2620421124726981124
 MonoBehaviour:
@@ -572,3 +572,4 @@ MonoBehaviour:
   isWizardInteractable: 1
   isObjectInteractable: 0
   triggerCollider: {fileID: 495248212581605074}
+  gameMenu: {fileID: 0}

@@ -15,10 +15,14 @@ public class GoalActivatorSwitch : Switch
 
     protected override void DoWhileOffFixed()
     {
+        animator.SetBool("Active", false);
+        LevelEndObject.SetActive(false);
     }
 
     protected override void DoWhileOnFixed()
     {
+        animator.SetBool("Active", true);
+        LevelEndObject.SetActive(true);
     }
 
     protected override void SwitchOff(EnumActor actor)

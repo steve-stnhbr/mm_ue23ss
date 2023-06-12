@@ -11,6 +11,9 @@ public class HumanMoveBehaviour : HumanGenericBehaviour
 	public float jumpHeight = 1.5f;                 // Default jump height.
 	public float jumpIntertialForce = 10f;          // Default horizontal inertial force when jumping.
 
+	public AudioClip[] footstepSounds;
+	public AudioSource footstepSource;
+
 	private float speed, speedSeeker;               // Moving speed.
 	private int jumpBool;                           // Animator variable related to jumping.
 	private int groundedBool;                       // Animator variable related to whether or not the player is on ground.
@@ -189,4 +192,9 @@ public class HumanMoveBehaviour : HumanGenericBehaviour
 		GetComponent<CapsuleCollider>().material.dynamicFriction = 0.6f;
 		GetComponent<CapsuleCollider>().material.staticFriction = 0.6f;
 	}
+
+	public void OnFootstep()
+    {
+		footstepSource.PlayOneShot(footstepSounds[Random.Range(0, footstepSounds.Length - 1)]);
+    }
 }

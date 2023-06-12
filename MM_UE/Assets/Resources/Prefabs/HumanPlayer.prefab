@@ -1232,7 +1232,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactDelay: 0.2
-  interactUI: {fileID: 776088171252666847}
+  interactPrompt: {fileID: 3344683828273483734, guid: cf5a7ee76c886934e8f2d9fc0b748318, type: 3}
+  promptHeight: 2
 --- !u!1 &739230869707696064
 GameObject:
   m_ObjectHideFlags: 0

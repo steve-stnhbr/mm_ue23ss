@@ -8,7 +8,9 @@ public class HumanInteraction : MonoBehaviour, IDisableInputForMenu
     float lastInteractTime = 0;
     bool inputForMenuDisabled = false;
 
-    [SerializeField] GameObject interactUI;
+    [SerializeField] GameObject interactPrompt;
+    [SerializeField] float promptHeight = 1;
+
 
     private void OnTriggerStay(Collider other)
     {
@@ -33,9 +35,12 @@ public class HumanInteraction : MonoBehaviour, IDisableInputForMenu
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<IInteractable>() != null)
+        if(other.GetComponent<Interactable>() != null && other.GetComponent<Interactable>().isHumanInteractable)
         {
-            interactUI.SetActive(true);
+            GameObject prompt = Instantiate(interactPrompt);
+            prompt.transform.SetParent(other.transform);
+            Vector3 pos = other.transform.position;
+            prompt.transform.position = new Vector3(pos.x, pos.y+promptHeight, pos.z);
         }
     }
 
@@ -43,7 +48,11 @@ public class HumanInteraction : MonoBehaviour, IDisableInputForMenu
     {
         if (other.GetComponent<IInteractable>() != null)
         {
-            interactUI.SetActive(false);
+            InteractPrompt prompt = other.gameObject.GetComponentInChildren<InteractPrompt>();
+            if(prompt != null)
+            {
+                prompt.destroyPrompt();
+            }
         }
     }
 

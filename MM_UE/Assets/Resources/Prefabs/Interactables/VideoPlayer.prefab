@@ -183,8 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c750e1d104cc3f9408a2c28d6c6b7b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHumanInteractable: 1
-  isWizardInteractable: 1
+  isHumanInteractable: 0
+  isWizardInteractable: 0
   isObjectInteractable: 0
   triggerCollider: {fileID: 0}
   state: 0

@@ -32,9 +32,14 @@ public class WizardPlayerMovement: MonoBehaviour, IDisableInputForMenu, IDisable
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void FixedUpdate()
     {
+        if (rigidbody.velocity.magnitude > maxSpeed)
+        {
+            rigidbody.velocity = rigidbody.velocity.normalized * maxSpeed;
+        }
+        
         if (inputDisabledForInteraction || inputDisabledForMenu)
         {
             return;
@@ -68,14 +73,6 @@ public class WizardPlayerMovement: MonoBehaviour, IDisableInputForMenu, IDisable
         } else
         {
             emission.enabled = false;
-        }
-    }
-
-    void FixedUpdate()
-    {
-        if (rigidbody.velocity.magnitude > maxSpeed)
-        {
-            rigidbody.velocity = rigidbody.velocity.normalized * maxSpeed;
         }
     }
 

@@ -48,6 +48,7 @@ public class WS_MagneticField : WizardSkill
 
     private void OnTriggerEnter(Collider other)
     {
+        
         MagneticBehaviour magnetic;
         if (other.TryGetComponent(out magnetic))
         {

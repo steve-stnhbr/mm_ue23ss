@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 15.360565, g: 15.360565, b: 15.360565, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10641,14 +10641,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1776457117238904729, guid: d98426e99ed416646821204d42141bb8, type: 3}
-      propertyPath: selectedClass
-      value: selected
-      objectReference: {fileID: 0}
-    - target: {fileID: 1776457117238904729, guid: d98426e99ed416646821204d42141bb8, type: 3}
-      propertyPath: skillTemplate
-      value: 
-      objectReference: {fileID: 9197481963319205126, guid: ff3ba7ac2008ff6498d42b887f3a582f, type: 3}
-    - target: {fileID: 1776457117238904729, guid: d98426e99ed416646821204d42141bb8, type: 3}
       propertyPath: availableWizardSkillInstances.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -18304,18 +18296,6 @@ MonoBehaviour:
   prefab: {fileID: 7819710796523589834, guid: 743fca7512c529f4e89ede202ef1ffc5, type: 3}
   cooldown: 0
   relativeSpawnHeight: -1
---- !u!114 &928877266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 928877250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5abe13c3ce0bcf34797f3b1a2f08365a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &928877273 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1776457117238904730, guid: d98426e99ed416646821204d42141bb8, type: 3}
@@ -18333,8 +18313,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73e54c7f609978f43a43ebae0c366658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UISprite: {fileID: 21300000, guid: 02800fb9cff14da47a04572790384d8b, type: 3}
-  UISpriteSelected: {fileID: 21300000, guid: 65f0e363b74cf5845ab8c3fbc14f39ac, type: 3}
+  UISprite: {fileID: 21300000, guid: c29f7795193e4dd42936167fa596ff0a, type: 3}
+  UISpriteSelected: {fileID: 21300000, guid: 665de827d002e5e498dd7df0f92ebf12, type: 3}
   UIColor: {r: 0.35740763, g: 0.16035953, b: 0.7264151, a: 0}
   cooldown: 0
   effectDistance: 7

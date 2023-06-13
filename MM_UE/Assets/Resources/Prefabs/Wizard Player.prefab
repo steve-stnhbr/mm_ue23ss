@@ -5130,7 +5130,6 @@ MonoBehaviour:
   mouseGravitation: 2
   maxDistanceToMouse: 0.2
   turbineInactiveSpeed: 0.2
-  moveTrail: {fileID: 3326096493573814505}
 --- !u!135 &1776457117238904728
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5156,8 +5155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 417efbc02f14def4583c443ba20c68a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillTemplate: {fileID: 0}
-  selectedClass: 
+  skillTemplate: {fileID: 9197481963319205126, guid: ff3ba7ac2008ff6498d42b887f3a582f, type: 3}
+  selectedClass: selected
 --- !u!54 &1776457117238904678
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6469,7 +6468,7 @@ GameObject:
   - component: {fileID: 8960512212871590034}
   - component: {fileID: 2680146661726908184}
   - component: {fileID: 9018914231787765026}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Interact System
   m_TagString: Untagged
   m_Icon: {fileID: 0}

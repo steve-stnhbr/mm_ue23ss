@@ -11865,7 +11865,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 758302489677350692, guid: 6ef0b905f2b425e48910fbebb2e9243d, type: 3}
       propertyPath: m_Intensity
-      value: 59626.69
+      value: 59631.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 758302489677350692, guid: 6ef0b905f2b425e48910fbebb2e9243d, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 662
       objectReference: {fileID: 0}
     - target: {fileID: 758302489677350693, guid: 6ef0b905f2b425e48910fbebb2e9243d, type: 3}
       propertyPath: m_RootOrder
@@ -11917,7 +11921,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 758302489677350746, guid: 6ef0b905f2b425e48910fbebb2e9243d, type: 3}
       propertyPath: m_Intensity
-      value: 59626.69
+      value: 59631.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 758302489677350746, guid: 6ef0b905f2b425e48910fbebb2e9243d, type: 3}
+      propertyPath: m_VolumetricDimmer
+      value: 1.16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ef0b905f2b425e48910fbebb2e9243d, type: 3}

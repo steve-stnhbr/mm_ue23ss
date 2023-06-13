@@ -8,6 +8,8 @@ public class DecimationGrillBehaviour : MonoBehaviour
     public float initialCutoff;
     public short framesToDestroy;
 
+    public AudioClip destructionSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,12 @@ public class DecimationGrillBehaviour : MonoBehaviour
     {
         if (gameObject.layer == LayerMask.NameToLayer("Decimate"))
         {
+            AudioSource audioSource;
+            if (TryGetComponent(out audioSource))
+            {
+                audioSource.PlayOneShot(destructionSound);
+            }
+
             DecimationBehaviour decimation = gameObject.GetComponentInChildren<DecimationBehaviour>();
             if (decimation && !decimation.decimated)
             {

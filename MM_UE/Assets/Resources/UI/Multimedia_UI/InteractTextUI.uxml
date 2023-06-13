@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/UI/Multimedia_UI/multimedia.uss?fileID=7433441132597879392&amp;guid=9b47148a7bb985c4e8d09c8620e95f7e&amp;type=3#multimedia" />
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:VisualElement style="left: 60%; top: 60%; flex-grow: 0; align-items: flex-start;">
+            <ui:VisualElement style="background-color: rgba(0, 0, 0, 0.59); flex-shrink: 0; padding-left: 2px; padding-right: 2px; padding-top: 2px; padding-bottom: 2px;">
+                <ui:Label text="Interact (F)" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); -unity-font-style: bold;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

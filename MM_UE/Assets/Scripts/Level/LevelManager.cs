@@ -10,7 +10,15 @@ public static class LevelManager
     public static string[] levelNames = new string[] {
         "CubeIntroLevel",
         "MagnetIntroLevel",
-        "WaterLevel"
+        "WaterLevel",
+        "MainMenu"
+    };
+
+    public static string[] levelLoadingNames = new string[] {
+        "Cube Intro",
+        "Magnet Intro",
+        "Water Level",
+        "Main Menu"
     };
 
     public static int currentIndex = 0;

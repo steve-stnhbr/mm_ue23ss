@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class HumanInteraction : MonoBehaviour, IDisableInputForMenu
 {
-    public float interactDelay = 0.2f;
+    [SerializeField] float interactDelay = 0.2f;
     float lastInteractTime = 0;
     bool inputForMenuDisabled = false;
+
+    [SerializeField] GameObject interactPrompt;
+    [SerializeField] float promptHeight = 1;
+
 
     private void OnTriggerStay(Collider other)
     {
@@ -28,7 +32,30 @@ public class HumanInteraction : MonoBehaviour, IDisableInputForMenu
         }
 
     }
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.GetComponent<Interactable>() != null && other.GetComponent<Interactable>().isHumanInteractable)
+        {
+            GameObject prompt = Instantiate(interactPrompt);
+            prompt.transform.SetParent(other.transform);
+            Vector3 pos = other.transform.position;
+            prompt.transform.position = new Vector3(pos.x, pos.y+promptHeight, pos.z);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.GetComponent<IInteractable>() != null)
+        {
+            InteractPrompt prompt = other.gameObject.GetComponentInChildren<InteractPrompt>();
+            if(prompt != null)
+            {
+                prompt.destroyPrompt();
+            }
+        }
+    }
+
     public void DisableInputForMenu()
     {
         inputForMenuDisabled = true;

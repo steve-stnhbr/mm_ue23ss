@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class GoalLevelLoader : InteractableOnCollision
 {
+    [SerializeField] GameMenu gameMenu;
+    bool once = true;
     protected override void WhileCollision(EnumActor actor)
     {
-        Debug.Log("TODO: next Level Loading in GoalLevelLoader");
+        if (once) {
+            once = false;
+            gameMenu.loadNextLevel();
+        }
+        
     }
 }

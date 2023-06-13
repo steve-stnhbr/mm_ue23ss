@@ -61,6 +61,7 @@ public class TextTerminal : Switch
         terminalUI.SetActive(false);
         terminalText = terminalScript.getText();
         inWorldText.text = terminalText.ToUpper();
+        inWorldText.color = Color.blue;
 
         StartCoroutine(processPassword());
     }
@@ -76,6 +77,7 @@ public class TextTerminal : Switch
         if (terminalText.ToLower().Equals(password.ToLower()))
         {
             audioSource.PlayOneShot(successClip);
+            inWorldText.color = Color.green;
             if (objectToActivate != null)
             {
                 objectToActivate.Interact(EnumActor.Script);
@@ -84,6 +86,7 @@ public class TextTerminal : Switch
         }
         else
         {
+            inWorldText.color = Color.red;
             audioSource.PlayOneShot(errorClip);
         }
     }

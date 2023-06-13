@@ -11,7 +11,9 @@ public static class LevelManager
         "CubeIntroLevel",
         "InteractionIntroLevel",
         "MagnetIntroLevel",
+        "SteppingStoneLevel",
         "WaterLevel",
+        "PistonPuzzle",
         "MainMenu"
     };
 
@@ -19,7 +21,9 @@ public static class LevelManager
         "Cube Intro",
         "Interaction Intro",
         "Magnet Intro",
+        "Stepping Stone Level",
         "Water Level",
+        "Piston Puzzle",
         "Main Menu"
     };
 

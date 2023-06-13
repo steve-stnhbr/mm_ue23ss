@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class LevelSelectUI : MonoBehaviour
 {
     [SerializeField] GameMenu gameMenu;
-    int levelCount = 12;
+    int levelCount = 8;
 
     private void OnEnable()
     {

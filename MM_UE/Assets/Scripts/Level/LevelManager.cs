@@ -13,7 +13,7 @@ public static class LevelManager
         "MagnetIntroLevel",
         "SteppingStoneLevel",
         "PasswordLevel",
-        "ImagePuzzle",
+        "ImagePuzzleScene",
         "WaterLevel",
         "PistonPuzzle",
         "MainMenu"

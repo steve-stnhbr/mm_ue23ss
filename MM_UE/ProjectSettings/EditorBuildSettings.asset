@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/SteppingStoneLevel.unity
     guid: 691feb507026e77489f1473d04150bc6
+  - enabled: 1
+    path: Assets/Scenes/Levels/ImagePuzzleScene.unity
+    guid: ef9bf021ddb54b042b3e5c8a06565a11
   m_configObjects: {}

@@ -1816,34 +1816,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fad0183cd3dbf3546b1fbb3af7f3a539, type: 3}
---- !u!1 &864564562 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1776457117238904734, guid: d98426e99ed416646821204d42141bb8, type: 3}
-  m_PrefabInstance: {fileID: 1545990259}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &864564570 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1776457117238904730, guid: d98426e99ed416646821204d42141bb8, type: 3}
   m_PrefabInstance: {fileID: 1545990259}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &864564571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 864564562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e17b81d7dcc758429fce62fedaad532, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UISprite: {fileID: 21300000, guid: e685b654e3c4fdd42aedff9c9809d00c, type: 3}
-  UISpriteSelected: {fileID: 21300000, guid: d0ae86e1568afcf49891d707a54f53d6, type: 3}
-  UIColor: {r: 0, g: 0, b: 0, a: 0}
-  prefab: {fileID: 7819710796523589834, guid: 743fca7512c529f4e89ede202ef1ffc5, type: 3}
-  cooldown: 2
-  relativeSpawnHeight: -1
 --- !u!1001 &944337391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3161,7 +3138,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wizard Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1776457117238904729, guid: d98426e99ed416646821204d42141bb8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d98426e99ed416646821204d42141bb8, type: 3}
 --- !u!1001 &1628084796
 PrefabInstance:

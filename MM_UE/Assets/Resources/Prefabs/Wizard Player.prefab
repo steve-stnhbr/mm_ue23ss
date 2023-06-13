@@ -5126,7 +5126,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 776
   cameraOffset: 3
-  maxSpeed: 30
+  maxSpeed: 20
   mouseGravitation: 2
   maxDistanceToMouse: 0.2
   turbineInactiveSpeed: 0.2

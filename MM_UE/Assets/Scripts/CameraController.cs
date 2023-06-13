@@ -30,7 +30,7 @@ public class CameraController : MonoBehaviour, IDisableInputForMenu, IDisableInp
         camera = GetComponent<Camera>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (inputDisabledForInteraction || inputDisabledForMenu)
         {

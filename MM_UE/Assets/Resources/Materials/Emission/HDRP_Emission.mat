@@ -222,7 +222,7 @@ Material:
     - _StencilWriteMask: 6
     - _StencilWriteMaskDepth: 8
     - _StencilWriteMaskGBuffer: 14
-    - _StencilWriteMaskMV: 42
+    - _StencilWriteMaskMV: 40
     - _SubsurfaceMask: 1
     - _SupportDecals: 1
     - _SurfaceType: 0
@@ -253,7 +253,7 @@ Material:
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissiveColor: {r: 0.44333312, g: 2.333333, b: 4.4566665, a: 5.95}
+    - _EmissiveColor: {r: 74.50977, g: 392.1568, b: 749.0196, a: 1000}
     - _EmissiveColorLDR: {r: 0.30255374, g: 0.6592671, b: 0.88031507, a: 1}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}

@@ -9,6 +9,10 @@ public class ObserverCamSwitch : Switch
     [SerializeField] Animator animator;
     [SerializeField] AudioClip activationSound;
     AudioSource audioSource;
+    [SerializeField] float idleSoundIntervall = 3;
+    [SerializeField] AudioClip idleSound;
+    [SerializeField] GameObject camera;
+    float lastIdleSoundTime;
 
     private void Start()
     {
@@ -17,7 +21,11 @@ public class ObserverCamSwitch : Switch
 
     protected override void DoWhileOffFixed()
     {
-
+        if (Time.time - lastIdleSoundTime > idleSoundIntervall)
+        {
+            lastIdleSoundTime = Time.time;
+            audioSource.PlayOneShot(idleSound);
+        }
     }
 
     protected override void DoWhileOnFixed()

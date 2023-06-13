@@ -540,7 +540,7 @@ MonoBehaviour:
   isObjectInteractable: 0
   triggerCollider: {fileID: -3044941716673213264}
   state: 0
-  delayBetweenActivations: 0.2
+  delayBetweenActivations: 1
   objectToActivate: {fileID: 0}
   animator: {fileID: 6791451520036690679}
   activationSound: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}

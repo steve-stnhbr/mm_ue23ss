@@ -9,6 +9,7 @@ public static class LevelManager
 
     public static string[] levelNames = new string[] {
         "CubeIntroLevel",
+        "InteractionIntroLevel",
         "MagnetIntroLevel",
         "WaterLevel",
         "MainMenu"
@@ -16,6 +17,7 @@ public static class LevelManager
 
     public static string[] levelLoadingNames = new string[] {
         "Cube Intro",
+        "Interaction Intro",
         "Magnet Intro",
         "Water Level",
         "Main Menu"

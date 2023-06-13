@@ -16,9 +16,14 @@ public class GoalActivatorSwitch : Switch
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = portalSound;
+        
+    }
+
+    private void OnEnable()
+    {
         if (state)
         {
-            audioSource.Play();
+            SwitchOn(EnumActor.Script);
         }
     }
 

@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ImagePuzzleLevel : Level
 {
     public Transform canvasTransform;
     [Tooltip("The GameObjects which has a MeshRenderer and material whose mainTexture is the Image to be checked")]
-    public GameObject image;
+    public Sprite image;
 
     public Switch goal;
 
@@ -20,7 +21,7 @@ public class ImagePuzzleLevel : Level
     {
         canvasPosition = canvasTransform.position;
         //imageTexture = (Texture2D) image.GetComponent<MeshRenderer>().material.mainTexture;
-        imageTexture = image.GetComponent<SpriteRenderer>().sprite.texture;
+        imageTexture = image.texture;
     }
 
     // Update is called once per frame

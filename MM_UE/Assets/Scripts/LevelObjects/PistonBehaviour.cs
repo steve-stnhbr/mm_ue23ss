@@ -13,6 +13,7 @@ public class PistonBehaviour : Switch
 
     Animator animator;
 
+
     protected override void DoWhileOffFixed()
     {
     }
@@ -37,6 +38,10 @@ public class PistonBehaviour : Switch
     void Start()
     {
         animator = GetComponentInParent<Animator>();
+        if (state)
+        {
+            animator.SetBool("Active", true);
+        }
         relativePositions = new Vector3[relativeGameObjects.Length];
         for (int i = 0; i < relativeGameObjects.Length; i++)
         {

@@ -4,5 +4,35 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 68d90eb6288f2d54e8dc4a3d4b9d133b
+  - enabled: 0
+    path: Assets/Scenes/OtherScenes/Level1.unity
+    guid: 82425067ea59a574a9f7053a01e0f2ef
+  - enabled: 1
+    path: Assets/Scenes/Levels/InteractionIntroLevel.unity
+    guid: 389d8532869c9624cb9a4f6a863a96ef
+  - enabled: 1
+    path: Assets/Scenes/Levels/MagnetIntroLevel.unity
+    guid: 362f3f5659361784fa3ffa5c94664731
+  - enabled: 1
+    path: Assets/Scenes/Levels/WaterLevel.unity
+    guid: 6b1b785068296d946bfa1119c66749fb
+  - enabled: 1
+    path: Assets/Scenes/Levels/CubeIntroLevel.unity
+    guid: 0eb097410890454438872bb4f71ecd3e
+  - enabled: 1
+    path: Assets/Scenes/Levels/PasswordLevel.unity
+    guid: ec287d0218d438c49971cf8bc945c57a
+  - enabled: 1
+    path: Assets/Scenes/Levels/PistonPuzzle.unity
+    guid: ecfc715edea92ed4badf221b62270f10
+  - enabled: 1
+    path: Assets/Scenes/Levels/SteppingStoneLevel.unity
+    guid: 691feb507026e77489f1473d04150bc6
+  - enabled: 1
+    path: Assets/Scenes/Levels/ImagePuzzleScene.unity
+    guid: ef9bf021ddb54b042b3e5c8a06565a11
   m_configObjects: {}

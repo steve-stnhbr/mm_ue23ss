@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/UI/GameMenu/GameMenu.uss?fileID=7433441132597879392&amp;guid=2d28bfffda0e7134ea3e7890b8848ea8&amp;type=3#GameMenu" />
+    <ui:IMGUIContainer />
+    <ui:VisualElement style="flex-direction: column; align-items: flex-end; justify-content: flex-end; flex-grow: 1;">
+        <ui:Button text="Reset (R)" display-tooltip-when-elided="true" name="ButtonReset" class="hud-button" />
+        <ui:Button text="Menu (ESC)" display-tooltip-when-elided="true" name="ButtonMenu" class="hud-button" />
+    </ui:VisualElement>
+</ui:UXML>

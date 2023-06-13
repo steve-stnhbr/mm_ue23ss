@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/UI/GameMenu/GameMenu.uss?fileID=7433441132597879392&amp;guid=2d28bfffda0e7134ea3e7890b8848ea8&amp;type=3#GameMenu" />
+    <ui:VisualElement class="background" style="flex-grow: 1; justify-content: space-around; align-items: center;">
+        <ui:Label text="Loading" display-tooltip-when-elided="true" name="LevelTitle" class="headline" />
+        <ui:ProgressBar value="0" title=" 0 %" high-value="1" name="LoadingProgressBar" style="width: 70%; bottom: 0; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+    </ui:VisualElement>
+</ui:UXML>

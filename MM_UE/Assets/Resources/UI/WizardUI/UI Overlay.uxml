@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/UI/WizardUI/WizardStyles.uss?fileID=7433441132597879392&amp;guid=1f94e4caed8da2a45b8693ff66ad4bba&amp;type=3#WizardStyles" />
+    <ui:GroupBox style="height: 59px; width: 376px; right: 0; position: absolute; top: 0; left: 0; flex-direction: row;" />
+</ui:UXML>

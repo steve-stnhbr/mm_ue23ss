@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/UI/GameMenu/GameMenu.uss?fileID=7433441132597879392&amp;guid=2d28bfffda0e7134ea3e7890b8848ea8&amp;type=3#GameMenu" />
+    <ui:VisualElement class="background" style="flex-grow: 1; justify-content: space-between; align-items: stretch;">
+        <ui:VisualElement name="Container" style="align-items: center; justify-content: space-around; flex-grow: 1;">
+            <ui:VisualElement name="Container" style="flex-direction: row; align-items: flex-end; justify-content: center; width: 60%;">
+                <ui:SliderInt picking-mode="Ignore" label="Volume" value="100" high-value="100" name="VolumeSlider" style="flex-direction: column; font-size: 20px; color: rgb(58, 58, 58); flex-grow: 1; -unity-text-outline-color: rgb(0, 0, 0);" />
+                <ui:Label text="100%" display-tooltip-when-elided="true" name="VolumeLabel" style="font-size: 20px; color: rgb(84, 84, 84); width: 60px; -unity-text-align: lower-right; justify-content: flex-end;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Container" style="flex-grow: 1; flex-direction: row; justify-content: space-around; align-items: center;">
+            <ui:Button text="Resume" display-tooltip-when-elided="true" name="ButtonResume" class="menu-button" />
+            <ui:Button text="Level Selector" display-tooltip-when-elided="true" name="ButtonLevelSelector" class="menu-button" />
+            <ui:Button text="Quit" display-tooltip-when-elided="true" name="ButtonQuit" class="menu-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

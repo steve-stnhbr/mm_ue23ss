@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/UI/Multimedia_UI/multimedia.uss?fileID=7433441132597879392&amp;guid=9b47148a7bb985c4e8d09c8620e95f7e&amp;type=3#multimedia" />
+    <ui:VisualElement style="flex-grow: 1; align-items: center; justify-content: center; height: auto; width: auto;">
+        <ui:VisualElement style="width: 50%; height: 50%; background-color: rgb(106, 106, 106); align-items: stretch; justify-content: space-around;">
+            <ui:VisualElement style="flex-grow: 1;">
+                <ui:TextField picking-mode="Ignore" label="Enter Password:" value="filler text" name="TextFieldPassword" max-length="6" style="height: 100%; font-size: 30px; flex-direction: column; align-items: stretch; -unity-text-align: middle-left;" />
+            </ui:VisualElement>
+            <ui:VisualElement focusable="true" style="flex-grow: 0.7; flex-direction: row; align-items: center; justify-content: space-around;">
+                <ui:Button text="Enter/Close (F)" display-tooltip-when-elided="true" name="ButtonEnter" class="button" style="width: 30%; height: 30%;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,100 @@
+.title {
+    font-size: 50;
+    color: rgb(63, 63, 63);
+}
+
+.headline {
+    font-size: 30px;
+    color: rgb(63, 63, 63);
+}
+
+.menu-button {
+    width: 30%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    opacity: 1;
+    background-color: rgb(65, 65, 65);
+    color: rgb(207, 207, 207);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.menu-button:hover {
+    background-color: rgb(29, 29, 29);
+}
+
+.menu-button:active {
+    background-color: rgb(161, 161, 161);
+    -unity-background-image-tint-color: rgb(241, 241, 241);
+}
+
+.background {
+    background-color: rgb(149, 169, 171);
+}
+
+.level-selector-row {
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.level-selector-button {
+    flex-shrink: 0;
+    flex-grow: 0.2;
+    height: 80%;
+    font-size: 30px;
+    -unity-font-style: bold;
+    width: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(115, 115, 115);
+}
+
+.level-selector-button:hover {
+    background-color: rgb(60, 60, 60);
+}
+
+.level-selector-button:active {
+    background-color: rgb(168, 168, 168);
+}
+
+.hud-button {
+    width: 10%;
+    height: 10%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgba(96, 96, 96, 255);
+    min-width: 80px;
+}
+
+.hud-button:hover {
+    background-color: rgba(67, 67, 67, 255);
+}
+
+.hud-button:active {
+    width: 10%;
+    height: 10%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgba(142, 142, 142, 255);
+}

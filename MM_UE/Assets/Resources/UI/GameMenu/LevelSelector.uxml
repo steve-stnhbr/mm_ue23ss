@@ -1,0 +1,22 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/UI/GameMenu/GameMenu.uss?fileID=7433441132597879392&amp;guid=2d28bfffda0e7134ea3e7890b8848ea8&amp;type=3#GameMenu" />
+    <ui:VisualElement class="background" style="flex-grow: 1;">
+        <ui:VisualElement name="LevelTable" style="flex-grow: 1; padding-left: 60px; padding-right: 60px; padding-top: 60px; padding-bottom: 30px;">
+            <ui:VisualElement name="LevelRow" class="level-selector-row">
+                <ui:Button text="1" display-tooltip-when-elided="true" name="ButtonLevel1" class="level-selector-button" />
+                <ui:Button text="2" display-tooltip-when-elided="true" name="ButtonLevel2" class="level-selector-button" />
+                <ui:Button text="3" display-tooltip-when-elided="true" name="ButtonLevel3" class="level-selector-button" />
+                <ui:Button text="4" display-tooltip-when-elided="true" name="ButtonLevel4" class="level-selector-button" />
+            </ui:VisualElement>
+            <ui:VisualElement name="LevelRow" class="level-selector-row">
+                <ui:Button text="5" display-tooltip-when-elided="true" name="ButtonLevel5" class="level-selector-button" />
+                <ui:Button text="6" display-tooltip-when-elided="true" name="ButtonLevel6" class="level-selector-button" />
+                <ui:Button text="7" display-tooltip-when-elided="true" name="ButtonLevel7" class="level-selector-button" />
+                <ui:Button text="8" display-tooltip-when-elided="true" name="ButtonLevel8" class="level-selector-button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 0.3; align-items: center; justify-content: space-around;">
+            <ui:Button text="Back" display-tooltip-when-elided="true" name="ButtonBack" class="menu-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

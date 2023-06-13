@@ -6,6 +6,7 @@ public class HandleSwitch : Switch
 {
     [Tooltip("When set, the object gets activated")]
     public Interactable objectToActivate;
+    public Interactable objectToActivate2;
     [SerializeField] Animator animator;
     [SerializeField] AudioClip activationSound;
     AudioSource audioSource;
@@ -32,6 +33,10 @@ public class HandleSwitch : Switch
         {
             objectToActivate.Interact(EnumActor.Script);
         }
+        if (objectToActivate2 != null)
+        {
+            objectToActivate2.Interact(EnumActor.Script);
+        }
     }
 
     protected override void SwitchOn(EnumActor actor)
@@ -41,6 +46,10 @@ public class HandleSwitch : Switch
         if (objectToActivate != null)
         {
             objectToActivate.Interact(EnumActor.Script);
+        }
+        if (objectToActivate2 != null)
+        {
+            objectToActivate2.Interact(EnumActor.Script);
         }
     }
 

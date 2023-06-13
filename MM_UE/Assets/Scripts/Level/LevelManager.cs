@@ -9,21 +9,23 @@ public static class LevelManager
 
     public static string[] levelNames = new string[] {
         "CubeIntroLevel",
+        "InteractionIntroLevel",
         "MagnetIntroLevel",
+        "SteppingStoneLevel",
+        "PasswordLevel",
         "WaterLevel",
         "PistonPuzzle",
-        "ImagePuzzle",
-        "PasswordLevel",
         "MainMenu"
     };
 
     public static string[] levelLoadingNames = new string[] {
         "Cube Intro",
+        "Interaction Intro",
         "Magnet Intro",
-        "Water Level",
-        "Piston Level",
-        "Image Level",
+        "Stepping Stone Level",
         "Password Level",
+        "Water Level",
+        "Piston Puzzle",
         "Main Menu"
     };
 

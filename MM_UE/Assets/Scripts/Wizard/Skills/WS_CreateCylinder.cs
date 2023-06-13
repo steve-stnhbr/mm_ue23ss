@@ -8,6 +8,9 @@ public class WS_CreateCylinder : WizardSkill
     public float cooldown;
     [SerializeField] float relativeSpawnHeight = -1;
 
+    public LayerMask checkLayerMask;
+    public float checkRadius = 1;
+
     float currentCooldown;
 
     public override string skillName
@@ -16,10 +19,10 @@ public class WS_CreateCylinder : WizardSkill
     }
     public override void OnExecute(GameObject wizard)
     {
-        if (currentCooldown <= 0) { 
+        Vector3 spawnPosition = LevelManager.getCurrentLevel().worldPositionToLevelPosition(wizard.transform.position) + new Vector3(0, relativeSpawnHeight, 0);
+        if (currentCooldown <= 0 && !Physics.CheckSphere(spawnPosition, checkRadius, checkLayerMask)) { 
             GameObject instance = GameObject.Instantiate(prefab);
-            Vector3 spawnPosition = LevelManager.getCurrentLevel().worldPositionToLevelPosition(wizard.transform.position);
-            instance.transform.position = new Vector3(spawnPosition.x, spawnPosition.y + relativeSpawnHeight, spawnPosition.z);
+            instance.transform.position = spawnPosition;
             currentCooldown = cooldown;
         }
     }

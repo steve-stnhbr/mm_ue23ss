@@ -916,6 +916,18 @@ PrefabInstance:
       propertyPath: gameMenu
       value: 
       objectReference: {fileID: 1919383129}
+    - target: {fileID: 8363508659467035032, guid: 2a506016284629a459ecb96db3105f31, type: 3}
+      propertyPath: m_Volume
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363508659467035032, guid: 2a506016284629a459ecb96db3105f31, type: 3}
+      propertyPath: MaxDistance
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363508659467035032, guid: 2a506016284629a459ecb96db3105f31, type: 3}
+      propertyPath: MinDistance
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a506016284629a459ecb96db3105f31, type: 3}
 --- !u!1001 &480046182

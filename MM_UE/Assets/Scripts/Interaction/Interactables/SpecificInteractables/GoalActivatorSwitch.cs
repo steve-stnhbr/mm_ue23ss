@@ -6,6 +6,21 @@ public class GoalActivatorSwitch : Switch
 {
     [SerializeField] Animator animator;
     [SerializeField] GameObject LevelEndObject;
+    [SerializeField] AudioClip activationSound;
+    [SerializeField] AudioClip deactivationSound;
+    [SerializeField] AudioClip portalSound;
+    AudioSource audioSource;
+    
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = portalSound;
+        if (state)
+        {
+            audioSource.Play();
+        }
+    }
 
     new public bool state
     {
@@ -29,12 +44,16 @@ public class GoalActivatorSwitch : Switch
     {
         animator.SetBool("Active", false);
         LevelEndObject.SetActive(false);
+        audioSource.Stop();
+        audioSource.PlayOneShot(deactivationSound);
     }
 
     protected override void SwitchOn(EnumActor actor)
     {
         animator.SetBool("Active", true);
         LevelEndObject.SetActive(true);
+        audioSource.PlayOneShot(activationSound);
+        audioSource.PlayDelayed(activationSound.length);
     }
 
 

@@ -16,21 +16,23 @@ public class GoalActivatorSwitch : Switch
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = portalSound;
-        
     }
 
-    private void OnEnable()
-    {
-        if (state)
-        {
-            SwitchOn(EnumActor.Script);
-        }
-    }
 
     new public bool state
     {
         get { return state; }
-        set { state = value; GetComponent<Animator>().SetBool("Active", true); }
+        set { state = value;
+            if (state)
+            {
+                SwitchOn(EnumActor.Script);
+            }
+            else
+            {
+                SwitchOff(EnumActor.Script);
+            }
+            
+            }
     }
 
     protected override void DoWhileOffFixed()

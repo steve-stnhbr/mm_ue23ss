@@ -69,7 +69,7 @@ public class WizardPlayerMovement: MonoBehaviour, IDisableInputForMenu, IDisable
         {
             emission.enabled = true;
             emission.rateOverTime = rigidbody.velocity.magnitude * 100;
-            audioSource.volume = rigidbody.velocity.magnitude * .02f;
+            audioSource.volume = rigidbody.velocity.magnitude * .04f;
         } else
         {
             emission.enabled = false;

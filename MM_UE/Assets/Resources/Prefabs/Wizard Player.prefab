@@ -6468,7 +6468,7 @@ GameObject:
   - component: {fileID: 8960512212871590034}
   - component: {fileID: 2680146661726908184}
   - component: {fileID: 9018914231787765026}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Interact System
   m_TagString: Untagged
   m_Icon: {fileID: 0}

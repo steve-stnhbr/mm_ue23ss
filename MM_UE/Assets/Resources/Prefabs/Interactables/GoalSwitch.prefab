@@ -669,7 +669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHumanInteractable: 1
-  isWizardInteractable: 1
+  isWizardInteractable: 0
   isObjectInteractable: 0
   triggerCollider: {fileID: 495248212581605074}
   gameMenu: {fileID: 0}

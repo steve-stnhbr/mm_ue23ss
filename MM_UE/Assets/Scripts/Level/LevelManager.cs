@@ -11,6 +11,9 @@ public static class LevelManager
         "CubeIntroLevel",
         "MagnetIntroLevel",
         "WaterLevel",
+        "PistonPuzzle",
+        "ImagePuzzle",
+        "PasswordLevel",
         "MainMenu"
     };
 
@@ -18,6 +21,9 @@ public static class LevelManager
         "Cube Intro",
         "Magnet Intro",
         "Water Level",
+        "Piston Level",
+        "Image Level",
+        "Password Level",
         "Main Menu"
     };
 

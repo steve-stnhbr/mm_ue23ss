@@ -67,7 +67,7 @@ public class ImagePuzzleLevel : Level
     {
         return Physics.CheckSphere(vector, .2f, LayerMask.GetMask(new string[] { "Decimate" }));
     }
-
+    /* Debug Gizmos
     private void OnDrawGizmos()
     {
         Vector2 dimensions = new Vector2(imageTexture.width, imageTexture.height);
@@ -89,5 +89,6 @@ public class ImagePuzzleLevel : Level
             }
         }
     }
+    */
 }
 

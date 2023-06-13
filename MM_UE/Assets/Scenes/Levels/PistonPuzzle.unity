@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 15.360565, g: 15.360565, b: 15.360565, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -31069,6 +31069,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wizard Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3819738077176271199, guid: d98426e99ed416646821204d42141bb8, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 32769
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d98426e99ed416646821204d42141bb8, type: 3}
 --- !u!1 &573803547 stripped
@@ -48566,14 +48570,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 911941573}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.0006714895, y: -0.0013761948, z: 0.0024976311, w: 0.9999957}
   m_LocalPosition: {x: -15.468481, y: 5.0001, z: 0.37565184}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2001155435}
   m_RootOrder: 119
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.077, y: -0.158, z: 0.286}
 --- !u!65 &911941575
 BoxCollider:
   m_ObjectHideFlags: 0

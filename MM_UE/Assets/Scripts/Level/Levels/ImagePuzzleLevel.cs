@@ -19,7 +19,8 @@ public class ImagePuzzleLevel : Level
     void Start()
     {
         canvasPosition = canvasTransform.position;
-        imageTexture = (Texture2D) image.GetComponent<MeshRenderer>().material.mainTexture;
+        //imageTexture = (Texture2D) image.GetComponent<MeshRenderer>().material.mainTexture;
+        imageTexture = image.GetComponent<SpriteRenderer>().sprite.texture;
     }
 
     // Update is called once per frame
@@ -67,8 +68,6 @@ public class ImagePuzzleLevel : Level
         return Physics.CheckSphere(vector, .2f, LayerMask.GetMask(new string[] { "Decimate" }));
     }
 
-    /*
-     * Gizmos for debugging
     private void OnDrawGizmos()
     {
         Vector2 dimensions = new Vector2(imageTexture.width, imageTexture.height);
@@ -90,6 +89,5 @@ public class ImagePuzzleLevel : Level
             }
         }
     }
-    */
 }
 

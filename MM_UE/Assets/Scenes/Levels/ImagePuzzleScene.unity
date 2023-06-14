@@ -12002,7 +12002,7 @@ MonoBehaviour:
   UISpriteSelected: {fileID: 21300000, guid: d0ae86e1568afcf49891d707a54f53d6, type: 3}
   UIColor: {r: 0, g: 0, b: 0, a: 0}
   prefab: {fileID: 7819710796523589834, guid: 743fca7512c529f4e89ede202ef1ffc5, type: 3}
-  cooldown: 2
+  cooldown: 1
   relativeSpawnHeight: -1
   checkLayerMask:
     serializedVersion: 2
@@ -27819,7 +27819,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1334077020
 PrefabInstance:
@@ -32882,6 +32882,10 @@ PrefabInstance:
     - target: {fileID: -6359302097058905518, guid: 2a506016284629a459ecb96db3105f31, type: 3}
       propertyPath: state
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6359302097058905518, guid: 2a506016284629a459ecb96db3105f31, type: 3}
+      propertyPath: isObjectInteractable
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 287161547540056114, guid: 2a506016284629a459ecb96db3105f31, type: 3}
       propertyPath: m_Name
@@ -43578,7 +43582,7 @@ PrefabInstance:
       objectReference: {fileID: 745237123}
     - target: {fileID: 3386981859370410723, guid: 1dbf6ab32b297584187234406f53d50e, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3386981859370410723, guid: 1dbf6ab32b297584187234406f53d50e, type: 3}
       propertyPath: m_LocalPosition.x

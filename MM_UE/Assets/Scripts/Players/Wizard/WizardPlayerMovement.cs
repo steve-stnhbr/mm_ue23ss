@@ -17,11 +17,13 @@ public class WizardPlayerMovement: MonoBehaviour, IDisableInputForMenu, IDisable
     [Tooltip("This value determines at what player speed the turbine shuts off")]
     public float turbineInactiveSpeed;
 
+    public GameObject locationMarker;
+    public LayerMask layerMaskLocation;
+
     Rigidbody rigidbody;
 
     AudioSource audioSource;
 
-    Vector3 lastMovePos;
     bool inputDisabledForMenu = false;
     bool inputDisabledForInteraction = false;
 
@@ -55,12 +57,7 @@ public class WizardPlayerMovement: MonoBehaviour, IDisableInputForMenu, IDisable
         Ray ray = new Ray(levelPos, levelPos - Camera.main.ScreenToWorldPoint(new Vector3(0,0,0)));
         if (Physics.Raycast(ray, out raycastHit, maxDistance, layerMask))
         {
-            lastMovePos = LevelManager.getCurrentLevel().worldPositionToLevelPosition(raycastHit.point);
             moveTo(LevelManager.getCurrentLevel().worldPositionToLevelPosition(raycastHit.point));
-        }
-        else
-        {
-            moveTo(lastMovePos);
         }
         
         ParticleSystem ps = GetComponentInChildren<ParticleSystem>();
@@ -74,6 +71,16 @@ public class WizardPlayerMovement: MonoBehaviour, IDisableInputForMenu, IDisable
         {
             emission.enabled = false;
         }
+
+
+        RaycastHit raycastHitLocation;
+        Ray rayLocation = new Ray(transform.position, new Vector3(0, -1, 0));
+        if (Physics.Raycast(rayLocation, out raycastHitLocation, maxDistance, layerMaskLocation))
+        {
+            Vector3 voxelVector = LevelManager.getCurrentLevel().worldPositionToLevelPosition(raycastHitLocation.point);
+            locationMarker.transform.position = new Vector3(voxelVector.x, raycastHitLocation.point.y, voxelVector.z);
+        }
+
     }
 
     void moveTo(Vector3 position)

@@ -3750,6 +3750,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4486267167145320734, guid: 3cb22e1c6ceda244394e8fb259aa269b, type: 3}
+      propertyPath: levelTip
+      value: 'Human:
+
+        F to interact
+
+        Robot:
+
+        RIGHT CLICK
+        to interact'
+      objectReference: {fileID: 0}
     - target: {fileID: 9003057604334576193, guid: 3cb22e1c6ceda244394e8fb259aa269b, type: 3}
       propertyPath: m_Name
       value: GameMenu

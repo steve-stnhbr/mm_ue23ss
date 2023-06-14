@@ -33,12 +33,10 @@ public class ImagePuzzleLevel : Level
             if (!goal.state && finished)
             {
                 Debug.Log("Finished Puzzle");
-                goal.state = true;
                 goal.Interact(EnumActor.Object);
             } else if (goal.state && !finished)
             {
                 Debug.Log("Unfinished Puzzle");
-                goal.state = false;
                 goal.Interact(EnumActor.Object);
             }
         }

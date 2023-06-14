@@ -5134,7 +5134,7 @@ MonoBehaviour:
   locationMarker: {fileID: 5385008237081716226}
   layerMaskLocation:
     serializedVersion: 2
-    m_Bits: 537
+    m_Bits: 2585
 --- !u!135 &1776457117238904728
 SphereCollider:
   m_ObjectHideFlags: 0

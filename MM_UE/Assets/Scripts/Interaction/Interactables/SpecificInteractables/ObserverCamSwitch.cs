@@ -11,12 +11,16 @@ public class ObserverCamSwitch : Switch
     AudioSource audioSource;
     [SerializeField] float idleSoundIntervall = 3;
     [SerializeField] AudioClip idleSound;
-    [SerializeField] GameObject camera;
     float lastIdleSoundTime;
+    [SerializeField] GameObject flashingDot;
+    [SerializeField] Material flashingMaterial;
+    Material oldMaterial;
+    
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        oldMaterial = flashingDot.GetComponent<MeshRenderer>().material;
     }
 
     protected override void DoWhileOffFixed()
@@ -25,6 +29,8 @@ public class ObserverCamSwitch : Switch
         {
             lastIdleSoundTime = Time.time;
             audioSource.PlayOneShot(idleSound);
+            flashingDot.GetComponent<MeshRenderer>().material = flashingMaterial;
+            StartCoroutine(TurnOffLight());
         }
     }
 
@@ -50,5 +56,11 @@ public class ObserverCamSwitch : Switch
         {
             objectToActivate.SetActive(true);
         }
+    }
+
+    IEnumerator TurnOffLight()
+    {
+        yield return new WaitForSeconds(1);
+        flashingDot.GetComponent<MeshRenderer>().material = oldMaterial;
     }
 }

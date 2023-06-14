@@ -30,7 +30,7 @@ public class DroppableBoxBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!dropped && framesAliveBeforeDrop > 3 && collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        if (!dropped && framesAliveBeforeDrop > 3 && collision.gameObject.layer == LayerMask.NameToLayer("Ground") && GetComponent<Rigidbody>().velocity.magnitude < .1f)
         {
             dropped = true;
             this.playDropSound();

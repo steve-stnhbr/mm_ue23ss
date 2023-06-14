@@ -5,6 +5,7 @@ using UnityEngine;
 public class WizardPlayerMovement: MonoBehaviour, IDisableInputForMenu, IDisableInputForInteraction
 {
     public float maxDistance = 30;
+    [Tooltip("The LayerMask that is checked for the movement of the wizard")]
     public LayerMask layerMask;
     public float cameraOffset;
     [Tooltip("This value describes the maximum speed the wizard player can have while moving to the mouse")]
@@ -17,7 +18,9 @@ public class WizardPlayerMovement: MonoBehaviour, IDisableInputForMenu, IDisable
     [Tooltip("This value determines at what player speed the turbine shuts off")]
     public float turbineInactiveSpeed;
 
+    [Tooltip("Themarker for the location of the wizard")]
     public GameObject locationMarker;
+    [Tooltip("The LayerMask that is checked for the location indicator of the wizard")]
     public LayerMask layerMaskLocation;
 
     Rigidbody rigidbody;

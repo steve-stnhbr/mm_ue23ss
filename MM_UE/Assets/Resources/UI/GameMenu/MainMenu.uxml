@@ -12,7 +12,7 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="Container" style="flex-grow: 1; flex-direction: row; justify-content: space-around; align-items: center;">
-            <ui:Button text="New Game" display-tooltip-when-elided="true" name="ButtonNewGame" class="menu-button" />
+            <ui:Button text="Start" display-tooltip-when-elided="true" name="ButtonNewGame" class="menu-button" />
             <ui:Button text="Level Selector" display-tooltip-when-elided="true" name="ButtonLevelSelector" class="menu-button" />
             <ui:Button text="Quit" display-tooltip-when-elided="true" name="ButtonQuit" class="menu-button" />
         </ui:VisualElement>

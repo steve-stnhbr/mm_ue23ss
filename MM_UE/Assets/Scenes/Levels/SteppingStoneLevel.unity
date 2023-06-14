@@ -4152,7 +4152,7 @@ MonoBehaviour:
   checkLayerMask:
     serializedVersion: 2
     m_Bits: 3144
-  checkRadius: 1
+  checkRadius: 0.5
 --- !u!4 &232144377 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2589083457051781807, guid: 9a8f80e281103d542b6b381bb547cde9, type: 3}

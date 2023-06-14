@@ -10897,7 +10897,7 @@ MonoBehaviour:
   checkLayerMask:
     serializedVersion: 2
     m_Bits: 3144
-  checkRadius: 1
+  checkRadius: 0.5
 --- !u!1001 &599433300
 PrefabInstance:
   m_ObjectHideFlags: 0

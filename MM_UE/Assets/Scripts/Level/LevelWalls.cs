@@ -302,6 +302,7 @@ public class LevelWalls : MonoBehaviour
         // Erzeuge das GameObject
         GameObject plane = new GameObject("Plane");
         plane.name = name;
+        plane.layer = LayerMask.NameToLayer("Environment");
         plane.AddComponent<MeshFilter>().mesh = mesh;
         plane.AddComponent<MeshRenderer>().material = wallMaterial;
         plane.AddComponent<MeshCollider>().sharedMesh = mesh;

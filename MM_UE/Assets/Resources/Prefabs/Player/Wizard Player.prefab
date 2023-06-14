@@ -5125,7 +5125,7 @@ MonoBehaviour:
   maxDistance: 100
   layerMask:
     serializedVersion: 2
-    m_Bits: 776
+    m_Bits: 264
   cameraOffset: 3
   maxSpeed: 20
   mouseGravitation: 2

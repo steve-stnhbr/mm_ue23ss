@@ -3,7 +3,7 @@
     <ui:IMGUIContainer />
     <ui:VisualElement class="background" style="flex-grow: 1; justify-content: space-between; align-items: stretch;">
         <ui:VisualElement name="Container" style="align-items: center; justify-content: space-around; flex-grow: 1;">
-            <ui:Label text="COOP-Game" display-tooltip-when-elided="true" name="GameTitle" class="title" />
+            <ui:Label text="Robobud" display-tooltip-when-elided="true" name="GameTitle" class="title" />
         </ui:VisualElement>
         <ui:VisualElement name="Container" style="align-items: center; justify-content: space-around; flex-grow: 0;">
             <ui:VisualElement name="Container" style="flex-direction: row; align-items: flex-end; justify-content: center; width: 60%;">

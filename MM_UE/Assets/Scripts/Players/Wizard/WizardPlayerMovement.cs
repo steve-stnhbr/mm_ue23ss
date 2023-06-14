@@ -23,6 +23,8 @@ public class WizardPlayerMovement: MonoBehaviour, IDisableInputForMenu, IDisable
     [Tooltip("The LayerMask that is checked for the location indicator of the wizard")]
     public LayerMask layerMaskLocation;
 
+    public float volumeScale;
+
     Rigidbody rigidbody;
 
     AudioSource audioSource;
@@ -69,7 +71,7 @@ public class WizardPlayerMovement: MonoBehaviour, IDisableInputForMenu, IDisable
         {
             emission.enabled = true;
             emission.rateOverTime = rigidbody.velocity.magnitude * 100;
-            audioSource.volume = rigidbody.velocity.magnitude * .04f;
+            audioSource.volume = Mathf.Sqrt(rigidbody.velocity.magnitude) * volumeScale;
         } else
         {
             emission.enabled = false;

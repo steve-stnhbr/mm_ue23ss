@@ -5501,7 +5501,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5257805242216622434, guid: 1064580529e6c8245b81404204be5db5, type: 3}
+  - {fileID: 2100000, guid: 00c426ee65c695a49a72dbbcf1e97982, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5912,7 +5912,7 @@ GameObject:
   - component: {fileID: 3520933699081182006}
   - component: {fileID: 8819951197881685338}
   - component: {fileID: 3529264751229795477}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6274,7 +6274,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5257805242216622434, guid: 1064580529e6c8245b81404204be5db5, type: 3}
+  - {fileID: 2100000, guid: 00c426ee65c695a49a72dbbcf1e97982, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6556,7 +6556,7 @@ GameObject:
   - component: {fileID: 8960512212871590034}
   - component: {fileID: 2680146661726908184}
   - component: {fileID: 9018914231787765026}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Interact System
   m_TagString: Untagged
   m_Icon: {fileID: 0}

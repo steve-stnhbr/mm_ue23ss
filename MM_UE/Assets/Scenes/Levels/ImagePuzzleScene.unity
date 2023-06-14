@@ -12002,7 +12002,7 @@ MonoBehaviour:
   UISpriteSelected: {fileID: 21300000, guid: d0ae86e1568afcf49891d707a54f53d6, type: 3}
   UIColor: {r: 0, g: 0, b: 0, a: 0}
   prefab: {fileID: 7819710796523589834, guid: 743fca7512c529f4e89ede202ef1ffc5, type: 3}
-  cooldown: 2
+  cooldown: 1
   relativeSpawnHeight: -1
   checkLayerMask:
     serializedVersion: 2

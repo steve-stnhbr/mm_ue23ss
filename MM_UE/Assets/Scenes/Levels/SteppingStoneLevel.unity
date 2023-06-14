@@ -18034,6 +18034,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1776457117238904731, guid: d98426e99ed416646821204d42141bb8, type: 3}
+      propertyPath: layerMaskLocation.m_Bits
+      value: 2585
+      objectReference: {fileID: 0}
     - target: {fileID: 1776457117238904734, guid: d98426e99ed416646821204d42141bb8, type: 3}
       propertyPath: m_Name
       value: Wizard Player
@@ -18391,7 +18395,7 @@ GameObject:
   - component: {fileID: 1003304115}
   - component: {fileID: 1003304114}
   - component: {fileID: 1003304113}
-  m_Layer: 3
+  m_Layer: 4
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25001,6 +25005,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2589083457051781807, guid: 9a8f80e281103d542b6b381bb547cde9, type: 3}
   m_PrefabInstance: {fileID: 467489931}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1360389819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1360389821}
+  - component: {fileID: 1360389820}
+  m_Layer: 9
+  m_Name: WizardFloor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1360389820
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360389819}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1360389821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360389819}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.55, y: 1.14, z: 9.33}
+  m_LocalScale: {x: 19.8, y: 0.1, z: 16}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1362456300
 PrefabInstance:
   m_ObjectHideFlags: 0

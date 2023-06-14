@@ -59,7 +59,7 @@ public class GoalActivatorSwitch : Switch
     {
         animator.SetBool("Active", true);
         LevelEndObject.SetActive(true);
-        audioSource.PlayOneShot(activationSound);
+        audioSource.PlayOneShot(activationSound, 0.8f);
         audioSource.PlayDelayed(activationSound.length);
     }
 

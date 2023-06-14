@@ -204,7 +204,7 @@ MonoBehaviour:
   active: 1
   quality:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 1
   enabled:
     m_OverrideState: 1
     m_Value: 1
@@ -237,7 +237,7 @@ MonoBehaviour:
     m_Value: 81
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 22.4
+    m_Value: 18.5
   enableVolumetricFog:
     m_OverrideState: 1
     m_Value: 1
@@ -249,7 +249,7 @@ MonoBehaviour:
     m_Value: 1
   depthExtent:
     m_OverrideState: 1
-    m_Value: 1.53
+    m_Value: 2.6
   denoisingMode:
     m_OverrideState: 0
     m_Value: 2
@@ -270,10 +270,10 @@ MonoBehaviour:
     m_Value: 64
   m_VolumetricFogBudget:
     m_OverrideState: 1
-    m_Value: 0.666
+    m_Value: 0.33
   m_ResolutionDepthRatio:
     m_OverrideState: 1
-    m_Value: 0.5
+    m_Value: 0.666
   directionalLightsOnly:
     m_OverrideState: 0
     m_Value: 0

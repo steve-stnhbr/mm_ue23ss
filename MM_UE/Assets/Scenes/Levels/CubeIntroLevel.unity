@@ -8959,7 +8959,7 @@ MonoBehaviour:
   relativeSpawnHeight: -1
   checkLayerMask:
     serializedVersion: 2
-    m_Bits: 3593
+    m_Bits: 3144
   checkRadius: 1
 --- !u!1001 &879134457
 PrefabInstance:

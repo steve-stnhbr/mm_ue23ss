@@ -62,7 +62,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: checkLayerMask.m_Bits
-    value: 3593
+    value: 3144
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: checkRadius

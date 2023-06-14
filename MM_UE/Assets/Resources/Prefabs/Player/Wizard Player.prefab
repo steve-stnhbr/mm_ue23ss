@@ -5135,6 +5135,7 @@ MonoBehaviour:
   layerMaskLocation:
     serializedVersion: 2
     m_Bits: 2585
+  volumeScale: 0.025
 --- !u!135 &1776457117238904728
 SphereCollider:
   m_ObjectHideFlags: 0

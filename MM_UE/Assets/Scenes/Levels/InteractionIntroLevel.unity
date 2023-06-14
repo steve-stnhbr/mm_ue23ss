@@ -3308,6 +3308,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2486853345549293231, guid: 2d76d00103ab7164db861fa3e15758b6, type: 3}
+      propertyPath: greenLight
+      value: 
+      objectReference: {fileID: 2100000, guid: 87475a1cfc0d0a8489ac2be1e4086927, type: 2}
+    - target: {fileID: 2486853345549293231, guid: 2d76d00103ab7164db861fa3e15758b6, type: 3}
+      propertyPath: objectToActivate
+      value: 
+      objectReference: {fileID: 516899582}
+    - target: {fileID: 2486853345549293231, guid: 2d76d00103ab7164db861fa3e15758b6, type: 3}
+      propertyPath: objectToActivate2
+      value: 
+      objectReference: {fileID: 694353757}
     - target: {fileID: 5945170409797183392, guid: 2d76d00103ab7164db861fa3e15758b6, type: 3}
       propertyPath: m_Name
       value: RobotTerminal

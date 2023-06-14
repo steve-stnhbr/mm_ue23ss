@@ -1736,6 +1736,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 494299505}
     m_Modifications:
+    - target: {fileID: -3044941716673213264, guid: 579b387d40c11df4eb64bd197e03dc8e, type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5945170409797183392, guid: 579b387d40c11df4eb64bd197e03dc8e, type: 3}
       propertyPath: m_Name
       value: HandSwitch (4)
@@ -20020,6 +20024,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 494299505}
     m_Modifications:
+    - target: {fileID: -3044941716673213264, guid: 579b387d40c11df4eb64bd197e03dc8e, type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5945170409797183392, guid: 579b387d40c11df4eb64bd197e03dc8e, type: 3}
       propertyPath: m_Name
       value: HandSwitch (1)
@@ -39587,6 +39595,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 494299505}
     m_Modifications:
+    - target: {fileID: -3044941716673213264, guid: 579b387d40c11df4eb64bd197e03dc8e, type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5945170409797183392, guid: 579b387d40c11df4eb64bd197e03dc8e, type: 3}
       propertyPath: m_Name
       value: HandSwitch (3)
@@ -61914,6 +61926,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 494299505}
     m_Modifications:
+    - target: {fileID: -3044941716673213264, guid: 579b387d40c11df4eb64bd197e03dc8e, type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5945170409797183392, guid: 579b387d40c11df4eb64bd197e03dc8e, type: 3}
       propertyPath: m_Name
       value: HandSwitch (5)
@@ -90634,15 +90650,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9020366258260469986, guid: 4f6737016f2a18741b1ebe58fd2856ca, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.8195511
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 9020366258260469986, guid: 4f6737016f2a18741b1ebe58fd2856ca, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.8195511
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 9020366258260469986, guid: 4f6737016f2a18741b1ebe58fd2856ca, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.8195511
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 9020366258260469986, guid: 4f6737016f2a18741b1ebe58fd2856ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -90683,6 +90699,10 @@ PrefabInstance:
     - target: {fileID: 9020366258260469986, guid: 4f6737016f2a18741b1ebe58fd2856ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9020366258260469986, guid: 4f6737016f2a18741b1ebe58fd2856ca, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9020366258260469987, guid: 4f6737016f2a18741b1ebe58fd2856ca, type: 3}
       propertyPath: magneticStrength
@@ -94696,6 +94716,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 494299505}
     m_Modifications:
+    - target: {fileID: -3044941716673213264, guid: 579b387d40c11df4eb64bd197e03dc8e, type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5945170409797183392, guid: 579b387d40c11df4eb64bd197e03dc8e, type: 3}
       propertyPath: m_Name
       value: HandSwitch
@@ -95817,6 +95841,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8584592782064796817, guid: a6b1ae1d791a1c44a98e3e35b553ffc8, type: 3}
   m_PrefabInstance: {fileID: 1764509901}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1773770078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5616316551891546988, guid: c01dca7de4a5aa04c956ad1352cb248b, type: 3}
+  m_PrefabInstance: {fileID: 390026888}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1773770081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773770078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9e3e9689d197cb4c9aa6d587ee30e5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: {x: 0, y: 10000, z: -60000}
+--- !u!65 &1773770082
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773770078}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0637436, y: 2.5026429, z: 1.8494712}
+  m_Center: {x: 0.040726304, y: 1.2573429, z: 0.0034747717}
 --- !u!1001 &1776390211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105673,7 +105728,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.376
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -107837,6 +107892,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 494299505}
     m_Modifications:
+    - target: {fileID: -3044941716673213264, guid: 579b387d40c11df4eb64bd197e03dc8e, type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5945170409797183392, guid: 579b387d40c11df4eb64bd197e03dc8e, type: 3}
       propertyPath: m_Name
       value: HandSwitch (2)

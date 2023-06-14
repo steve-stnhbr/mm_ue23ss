@@ -5355,7 +5355,7 @@ GameObject:
   - component: {fileID: 3690050285641548726}
   - component: {fileID: 1033847089027251218}
   - component: {fileID: 3686209789238909541}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MagnetForce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
